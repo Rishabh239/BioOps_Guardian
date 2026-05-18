@@ -46,7 +46,7 @@ Browse all 8 error categories with their regex patterns, causes, fixes, and sugg
 
 ```bash
 # Clone the repository
-git clone https://github.com/YOUR_USERNAME/bioops-guardian.git
+git clone https://github.com/Rishabh239/BioOps_Guardian.git
 cd bioops-guardian
 
 # Install dependencies
