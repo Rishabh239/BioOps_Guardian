@@ -1,0 +1,205 @@
+Aug-28 12:58:31.460 [main] DEBUG nextflow.cli.Launcher - $> nextflow run main.nf -profile docker --inpath /home/kornthara/wf-paired-end-illumina-assembly/BP_Fastq_05_Jun_2025/results/Assembly --outpath /home/kornthara/wf-paired-end-illumina-assembly/BP_Fastq_05_Jun_2025/SNPresults --snp_package parsnp
+Aug-28 12:58:31.567 [main] DEBUG nextflow.cli.CmdRun - N E X T F L O W  ~  version 25.04.6
+Aug-28 12:58:31.596 [main] DEBUG nextflow.plugin.PluginsFacade - Setting up plugin manager > mode=prod; embedded=false; plugins-dir=/home/kornthara/.nextflow/plugins; core-plugins: nf-amazon@2.15.0,nf-azure@1.16.0,nf-cloudcache@0.4.3,nf-codecommit@0.2.3,nf-console@1.2.1,nf-google@1.21.1,nf-k8s@1.0.0,nf-tower@1.11.4,nf-wave@1.12.1
+Aug-28 12:58:31.616 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
+Aug-28 12:58:31.617 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
+Aug-28 12:58:31.620 [main] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.12.0 in 'deployment' mode
+Aug-28 12:58:31.631 [main] INFO  org.pf4j.AbstractPluginManager - No plugins
+Aug-28 12:58:31.663 [main] DEBUG nextflow.config.ConfigBuilder - Found config local: /home/kornthara/tools/wf-assembly-snps-final-nextflow-run-kornthara/nextflow.config
+Aug-28 12:58:31.666 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /home/kornthara/tools/wf-assembly-snps-final-nextflow-run-kornthara/nextflow.config
+Aug-28 12:58:31.698 [main] DEBUG n.secret.LocalSecretsProvider - Secrets store: /home/kornthara/.nextflow/secrets/store.json
+Aug-28 12:58:31.702 [main] DEBUG nextflow.secret.SecretsLoader - Discovered secrets providers: [nextflow.secret.LocalSecretsProvider@2234078] - activable => nextflow.secret.LocalSecretsProvider@2234078
+Aug-28 12:58:31.718 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `docker`
+Aug-28 12:58:33.830 [main] DEBUG nextflow.config.ConfigBuilder - Available config profiles: [bih, cfc_dev, uzl_omics, ifb_core, embl_hd, denbi_qbic, alice, mjolnir_globe, uppmax, giga, incliva, ilifu, ki_luria, uge, icr_alma, rosalind_uge, lugh, mccleary, unibe_ibu, vai, czbiohub_aws, jax, roslin, tes, scw, unc_longleaf, tigem, tubingen_apg, apollo, ipop_up, vsc_calcua, pdc_kth, ceci_nic5, ccga_cau, humantechnopole, stjude, daisybio, eddie, medair, biowulf, apptainer, bi, bigpurple, adcra, cedars, pawsey_setonix, vsc_kul_uhasselt, pawsey_nimbus, ucl_myriad, utd_ganymede, charliecloud, fred_hutch, seattlechildrens, icr_davros, ceres, arm, munin, rosalind, hasta, cfc, uzh, shu_bmrc, ebi_codon_slurm, ebc, ccga_dx, crick, ku_sund_danhead, marvin, shifter, biohpc_gen, mana, mamba, york_viking, unc_lccc, wehi, awsbatch, wustl_htcf, arcc, ceci_dragon2, imperial, maestro, software_license, cannon, genotoul, nci_gadi, abims, eva_grace, janelia, nu_genomics, googlebatch, oist, sahmri, kaust, alliance_canada, mpcdf, leicester, vsc_ugent, create, sage, cambridge, jex, podman, ebi_codon, cheaha, xanadu, nyu_hpc, test, marjorie, computerome, ucd_sonic, seg_globe, mssm, sanger, dkfz, bluebear, pasteur, einstein, ethz_euler, m3c, test_full, imb, ucl_cscluster, tuos_stanage, azurebatch, hki, seadragon, crukmi, csiro_petrichor, qmul_apocrita, wave, docker, engaging, gis, hypatia, psmn, eva, unity, cropdiversityhpc, nygc, fgcz, conda, crg, singularity, mpcdf_viper, pe2, self_hosted_runner, tufts, uw_hyak_pedslabs, binac2, debug, genouest, cbe, unsw_katana, utd_juno, gitpod, phoenix, seawulf, uod_hpc, fub_curta, uct_hpc, aws_tower, local_12core, binac, fsu_draco]
+Aug-28 12:58:33.867 [main] DEBUG nextflow.cli.CmdRun - Applied DSL=2 by global default
+Aug-28 12:58:33.887 [main] DEBUG nextflow.cli.CmdRun - Launching `main.nf` [friendly_brown] DSL2 - revision: 29e61374d2
+Aug-28 12:58:33.889 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins declared=[nf-schema@2.3.0]
+Aug-28 12:58:33.890 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins default=[]
+Aug-28 12:58:33.891 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins resolved requirement=[nf-schema@2.3.0]
+Aug-28 12:58:33.892 [main] DEBUG nextflow.plugin.PluginUpdater - Installing plugin nf-schema version: 2.3.0
+Aug-28 12:58:33.903 [main] INFO  org.pf4j.AbstractPluginManager - Plugin 'nf-schema@2.3.0' resolved
+Aug-28 12:58:33.903 [main] INFO  org.pf4j.AbstractPluginManager - Start plugin 'nf-schema@2.3.0'
+Aug-28 12:58:33.909 [main] DEBUG nextflow.plugin.BasePlugin - Plugin started nf-schema@2.3.0
+Aug-28 12:58:33.961 [main] DEBUG nextflow.Session - Session UUID: af970cde-1469-460f-a326-49a1e3cf8fb1
+Aug-28 12:58:33.962 [main] DEBUG nextflow.Session - Run name: friendly_brown
+Aug-28 12:58:33.962 [main] DEBUG nextflow.Session - Executor pool size: 22
+Aug-28 12:58:33.969 [main] DEBUG nextflow.file.FilePorter - File porter settings maxRetries=3; maxTransfers=50; pollTimeout=null
+Aug-28 12:58:33.978 [main] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'FileTransfer' minSize=10; maxSize=66; workQueue=LinkedBlockingQueue[-1]; allowCoreThreadTimeout=false
+Aug-28 12:58:34.002 [main] DEBUG nextflow.cli.CmdRun - 
+  Version: 25.04.6 build 5954
+  Created: 01-07-2025 11:27 UTC (18:27 ICST)
+  System: Linux 6.14.0-28-generic
+  Runtime: Groovy 4.0.26 on OpenJDK 64-Bit Server VM 17.0.16+8-Ubuntu-0ubuntu124.04.1
+  Encoding: UTF-8 (UTF-8)
+  Process: 260129@stealth-16-mercedesamg-a1vgg [130.130.2.243]
+  CPUs: 22 - Mem: 62.3 GB (51.2 GB) - Swap: 8 GB (8 GB)
+Aug-28 12:58:34.025 [main] DEBUG nextflow.Session - Work-dir: /home/kornthara/tools/wf-assembly-snps-final-nextflow-run-kornthara/work [ext2/ext3]
+Aug-28 12:58:34.055 [main] DEBUG nextflow.executor.ExecutorFactory - Extension executors providers=[]
+Aug-28 12:58:34.064 [main] DEBUG nextflow.Session - Observer factory: DefaultObserverFactory
+Aug-28 12:58:34.091 [main] DEBUG nextflow.Session - Observer factory: ValidationObserverFactory
+Aug-28 12:58:34.114 [main] DEBUG nextflow.Session - Observer factory (v2): LinObserverFactory
+Aug-28 12:58:34.151 [main] DEBUG nextflow.cache.CacheFactory - Using Nextflow cache factory: nextflow.cache.DefaultCacheFactory
+Aug-28 12:58:34.164 [main] DEBUG nextflow.util.CustomThreadPool - Creating default thread pool > poolSize: 23; maxThreads: 1000
+Aug-28 12:58:34.229 [main] DEBUG nextflow.Session - Session start
+Aug-28 12:58:34.232 [main] DEBUG nextflow.trace.TraceFileObserver - Workflow started -- trace file: /home/kornthara/tools/wf-assembly-snps-final-nextflow-run-kornthara/null/pipeline_info/execution_trace_2025-08-28_12-58-32.txt
+Aug-28 12:58:34.250 [main] DEBUG nextflow.Session - Using default localLib path: /home/kornthara/tools/wf-assembly-snps-final-nextflow-run-kornthara/lib
+Aug-28 12:58:34.252 [main] DEBUG nextflow.Session - Adding to the classpath library: /home/kornthara/tools/wf-assembly-snps-final-nextflow-run-kornthara/lib
+Aug-28 12:58:34.253 [main] DEBUG nextflow.Session - Adding to the classpath library: /home/kornthara/tools/wf-assembly-snps-final-nextflow-run-kornthara/lib/nfcore_external_java_deps.jar
+Aug-28 12:58:34.428 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
+Aug-28 12:58:35.171 [main] DEBUG nextflow.script.IncludeDef - Loading included plugin extensions with names: [paramsSummaryMap:paramsSummaryMap]; plugin Id: nf-schema
+Aug-28 12:58:35.615 [main] DEBUG nextflow.script.IncludeDef - Loading included plugin extensions with names: [paramsSummaryLog:paramsSummaryLog]; plugin Id: nf-schema
+Aug-28 12:58:35.616 [main] DEBUG nextflow.script.IncludeDef - Loading included plugin extensions with names: [validateParameters:validateParameters]; plugin Id: nf-schema
+Aug-28 12:58:35.618 [main] DEBUG nextflow.script.IncludeDef - Loading included plugin extensions with names: [paramsSummaryMap:paramsSummaryMap]; plugin Id: nf-schema
+Aug-28 12:58:35.619 [main] DEBUG nextflow.script.IncludeDef - Loading included plugin extensions with names: [samplesheetToList:samplesheetToList]; plugin Id: nf-schema
+Aug-28 12:58:35.847 [main] DEBUG nextflow.script.IncludeDef - Loading included plugin extensions with names: [paramsSummaryLog:paramsSummaryLog]; plugin Id: nf-schema
+Aug-28 12:58:35.847 [main] DEBUG nextflow.script.IncludeDef - Loading included plugin extensions with names: [validateParameters:validateParameters]; plugin Id: nf-schema
+Aug-28 12:58:35.850 [main] DEBUG nextflow.script.IncludeDef - Loading included plugin extensions with names: [paramsSummaryMap:paramsSummaryMap]; plugin Id: nf-schema
+Aug-28 12:58:35.851 [main] DEBUG nextflow.script.IncludeDef - Loading included plugin extensions with names: [samplesheetToList:samplesheetToList]; plugin Id: nf-schema
+Aug-28 12:58:36.039 [main] INFO  nextflow.Nextflow - 
+-[2m----------------------------------------------------[0m-
+                                        [0;32m,--.[0;30m/[0;32m,-.[0m
+[0;34m        ___     __   __   __   ___     [0;32m/,-._.--~'[0m
+[0;34m  |\ | |__  __ /  ` /  \ |__) |__         [0;33m}  {[0m
+[0;34m  | \| |       \__, \__/ |  \ |___     [0;32m\`-._,-`-,[0m
+                                        [0;32m`._,._,'[0m
+[0;35m  nf-core/assemblysnps 1.0.0dev[0m
+-[2m----------------------------------------------------[0m-
+[1mGeneric options[0m
+  [0;34mtrace_report_suffix: [0;32m2025-08-28_12-58-32[0m
+
+[1mCore Nextflow options[0m
+  [0;34mrunName            : [0;32mfriendly_brown[0m
+  [0;34mcontainerEngine    : [0;32mdocker[0m
+  [0;34mlaunchDir          : [0;32m/home/kornthara/tools/wf-assembly-snps-final-nextflow-run-kornthara[0m
+  [0;34mworkDir            : [0;32m/home/kornthara/tools/wf-assembly-snps-final-nextflow-run-kornthara/work[0m
+  [0;34mprojectDir         : [0;32m/home/kornthara/tools/wf-assembly-snps-final-nextflow-run-kornthara[0m
+  [0;34muserName           : [0;32mkornthara[0m
+  [0;34mprofile            : [0;32mdocker[0m
+  [0;34mconfigFiles        : [0;32m/home/kornthara/tools/wf-assembly-snps-final-nextflow-run-kornthara/nextflow.config[0m
+
+!! Only displaying parameters that differ from the pipeline defaults !!
+-[2m----------------------------------------------------[0m-
+* The nf-core framework
+    https://doi.org/10.1038/s41587-020-0439-x
+
+* Software dependencies
+    https://github.com/nf-core/assemblysnps/blob/master/CITATIONS.md
+
+Aug-28 12:58:36.042 [main] DEBUG n.validation.ValidationExtension - Starting parameters validation
+Aug-28 12:58:36.089 [main] WARN  n.validation.ValidationExtension - The following invalid input values have been detected:
+
+* --inpath: /home/kornthara/wf-paired-end-illumina-assembly/BP_Fastq_05_Jun_2025/results/Assembly
+* --outpath: /home/kornthara/wf-paired-end-illumina-assembly/BP_Fastq_05_Jun_2025/SNPresults
+* --snp_package: parsnp
+
+
+Aug-28 12:58:36.194 [main] DEBUG n.v.FormatDirectoryPathEvaluator - Cloud blob storage paths are not supported by 'FormatDirectoryPathEvaluator': 's3://ngi-igenomes/igenomes/'
+Aug-28 12:58:36.204 [main] ERROR n.validation.ValidationExtension - Validation of pipeline parameters failed!
+Aug-28 12:58:36.210 [main] DEBUG nextflow.script.ScriptRunner - Parsed script files:
+  Script_6390e5fe7c0c2d5a: /home/kornthara/tools/wf-assembly-snps-final-nextflow-run-kornthara/modules/local/harvesttools/main.nf
+  Script_4f612cfd8c52e8cd: /home/kornthara/tools/wf-assembly-snps-final-nextflow-run-kornthara/subworkflows/nf-core/utils_nextflow_pipeline/main.nf
+  Script_d0934f31ad677997: /home/kornthara/tools/wf-assembly-snps-final-nextflow-run-kornthara/modules/nf-core/snpsites/main.nf
+  Script_215a636da7ab24a2: /home/kornthara/tools/wf-assembly-snps-final-nextflow-run-kornthara/subworkflows/nf-core/utils_nfschema_plugin/main.nf
+  Script_f1d193943e70107a: /home/kornthara/tools/wf-assembly-snps-final-nextflow-run-kornthara/workflows/assemblysnps.nf
+  Script_5c4e8d4051efa81e: /home/kornthara/tools/wf-assembly-snps-final-nextflow-run-kornthara/subworkflows/nf-core/utils_nfcore_pipeline/main.nf
+  Script_fbdc26ee9e8cfa4a: /home/kornthara/tools/wf-assembly-snps-final-nextflow-run-kornthara/main.nf
+  Script_bcd94ac234b12dbe: /home/kornthara/tools/wf-assembly-snps-final-nextflow-run-kornthara/modules/nf-core/snpdists/main.nf
+  Script_f619dd7e82fb284f: /home/kornthara/tools/wf-assembly-snps-final-nextflow-run-kornthara/modules/local/parsnp/main.nf
+  Script_0fdb2e5f8575be0c: /home/kornthara/tools/wf-assembly-snps-final-nextflow-run-kornthara/modules/nf-core/multiqc/main.nf
+  Script_dc41886bdbd95b0b: /home/kornthara/tools/wf-assembly-snps-final-nextflow-run-kornthara/modules/nf-core/fastqc/main.nf
+  Script_5e5a29398f5c43ef: /home/kornthara/tools/wf-assembly-snps-final-nextflow-run-kornthara/subworkflows/local/utils_nfcore_assemblysnps_pipeline/main.nf
+Aug-28 12:58:36.210 [main] DEBUG nextflow.Session - Session aborted -- Cause: [0;31mThe following invalid input values have been detected:
+
+* Missing required parameter(s): input, outdir
+[0m
+
+Aug-28 12:58:36.225 [main] DEBUG nextflow.cli.Launcher - Operation aborted
+nextflow.validation.SchemaValidationException: [0;31mThe following invalid input values have been detected:
+
+* Missing required parameter(s): input, outdir
+[0m
+
+	at nextflow.validation.ValidationExtension.validateParameters(ValidationExtension.groovy:322)
+	at nextflow.validation.ValidationExtension.validateParameters(ValidationExtension.groovy)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at nextflow.script.FunctionDef.invoke_a(FunctionDef.groovy:64)
+	at nextflow.script.ComponentDef.invoke_o(ComponentDef.groovy:40)
+	at nextflow.script.WorkflowBinding.invokeMethod(WorkflowBinding.groovy:105)
+	at org.codehaus.groovy.runtime.InvokerHelper.invokePogoMethod(InvokerHelper.java:651)
+	at org.codehaus.groovy.runtime.InvokerHelper.invokeMethod(InvokerHelper.java:628)
+	at org.codehaus.groovy.runtime.metaclass.ClosureMetaClass.invokeOnDelegationObjects(ClosureMetaClass.java:392)
+	at org.codehaus.groovy.runtime.metaclass.ClosureMetaClass.invokeMethod(ClosureMetaClass.java:331)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1007)
+	at org.codehaus.groovy.vmplugin.v8.IndyInterface.fromCache(IndyInterface.java:321)
+	at Script_215a636da7ab24a2$_runScript_closure1$_closure2.doCall(Script_215a636da7ab24a2:39)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:343)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:328)
+	at org.codehaus.groovy.runtime.metaclass.ClosureMetaClass.invokeMethod(ClosureMetaClass.java:280)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1007)
+	at groovy.lang.Closure.call(Closure.java:433)
+	at groovy.lang.Closure.call(Closure.java:412)
+	at nextflow.script.WorkflowDef.run0(WorkflowDef.groovy:205)
+	at nextflow.script.WorkflowDef.run(WorkflowDef.groovy:189)
+	at nextflow.script.BindableDef.invoke_a(BindableDef.groovy:51)
+	at nextflow.script.ComponentDef.invoke_o(ComponentDef.groovy:40)
+	at nextflow.script.WorkflowBinding.invokeMethod(WorkflowBinding.groovy:105)
+	at org.codehaus.groovy.runtime.InvokerHelper.invokePogoMethod(InvokerHelper.java:651)
+	at org.codehaus.groovy.runtime.InvokerHelper.invokeMethod(InvokerHelper.java:628)
+	at org.codehaus.groovy.runtime.metaclass.ClosureMetaClass.invokeOnDelegationObjects(ClosureMetaClass.java:392)
+	at org.codehaus.groovy.runtime.metaclass.ClosureMetaClass.invokeMethod(ClosureMetaClass.java:331)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1007)
+	at org.codehaus.groovy.vmplugin.v8.IndyInterface.fromCache(IndyInterface.java:321)
+	at Script_5e5a29398f5c43ef$_runScript_closure3$_closure5.doCall(Script_5e5a29398f5c43ef:53)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:343)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:328)
+	at org.codehaus.groovy.runtime.metaclass.ClosureMetaClass.invokeMethod(ClosureMetaClass.java:280)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1007)
+	at groovy.lang.Closure.call(Closure.java:433)
+	at groovy.lang.Closure.call(Closure.java:412)
+	at nextflow.script.WorkflowDef.run0(WorkflowDef.groovy:205)
+	at nextflow.script.WorkflowDef.run(WorkflowDef.groovy:189)
+	at nextflow.script.BindableDef.invoke_a(BindableDef.groovy:51)
+	at nextflow.script.ComponentDef.invoke_o(ComponentDef.groovy:40)
+	at nextflow.script.WorkflowBinding.invokeMethod(WorkflowBinding.groovy:105)
+	at org.codehaus.groovy.runtime.InvokerHelper.invokePogoMethod(InvokerHelper.java:651)
+	at org.codehaus.groovy.runtime.InvokerHelper.invokeMethod(InvokerHelper.java:628)
+	at org.codehaus.groovy.runtime.metaclass.ClosureMetaClass.invokeOnDelegationObjects(ClosureMetaClass.java:392)
+	at org.codehaus.groovy.runtime.metaclass.ClosureMetaClass.invokeMethod(ClosureMetaClass.java:331)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1007)
+	at org.codehaus.groovy.vmplugin.v8.IndyInterface.fromCache(IndyInterface.java:321)
+	at Script_fbdc26ee9e8cfa4a$_runScript_closure2$_closure4.doCall(Script_fbdc26ee9e8cfa4a:71)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:343)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:328)
+	at org.codehaus.groovy.runtime.metaclass.ClosureMetaClass.invokeMethod(ClosureMetaClass.java:280)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1007)
+	at groovy.lang.Closure.call(Closure.java:433)
+	at groovy.lang.Closure.call(Closure.java:412)
+	at nextflow.script.WorkflowDef.run0(WorkflowDef.groovy:205)
+	at nextflow.script.WorkflowDef.run(WorkflowDef.groovy:189)
+	at nextflow.script.BindableDef.invoke_a(BindableDef.groovy:51)
+	at org.codehaus.groovy.vmplugin.v8.IndyInterface.fromCache(IndyInterface.java:321)
+	at nextflow.script.BaseScript.run0(BaseScript.groovy:182)
+	at org.codehaus.groovy.vmplugin.v8.IndyInterface.fromCache(IndyInterface.java:321)
+	at nextflow.script.BaseScript.run(BaseScript.groovy:193)
+	at nextflow.script.parser.v1.ScriptLoaderV1.runScript(ScriptLoaderV1.groovy:246)
+	at nextflow.script.parser.v1.ScriptLoaderV1.runScript(ScriptLoaderV1.groovy)
+	at nextflow.script.ScriptRunner.run(ScriptRunner.groovy:246)
+	at nextflow.script.ScriptRunner.execute(ScriptRunner.groovy:139)
+	at nextflow.cli.CmdRun.run(CmdRun.groovy:379)
+	at nextflow.cli.Launcher.run(Launcher.groovy:513)
+	at nextflow.cli.Launcher.main(Launcher.groovy:673)

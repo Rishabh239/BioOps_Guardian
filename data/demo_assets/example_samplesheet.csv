@@ -1,0 +1,5 @@
+sample,fastq_1,fastq_2,strandedness
+SAMPLE_01,/data/reads/S01_R1.fastq.gz,/data/reads/S01_R2.fastq.gz,reverse
+SAMPLE_02,/data/reads/S02_R1.fastq.gz,,reverse
+SAMPLE_01,/data/reads/S01b_R1.fastq.gz,/data/reads/S01b_R2.fastq.gz,reverse
+SAMPLE_03,/data/reads/S03_R1.fastq.gz,/data/reads/S03_R2.fastq.gz,banana

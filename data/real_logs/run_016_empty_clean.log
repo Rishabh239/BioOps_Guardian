@@ -1,0 +1,84 @@
+Apr-27 11:32:53.244 [main] DEBUG nextflow.cli.Launcher - $> nextflow run main.nf -preview
+Apr-27 11:32:53.285 [main] INFO  nextflow.cli.CmdRun - N E X T F L O W  ~  version 25.10.2
+Apr-27 11:32:53.300 [main] DEBUG nextflow.plugin.PluginsFacade - Setting up plugin manager > mode=prod; embedded=false; plugins-dir=/Users/williamlautert/.nextflow/plugins; core-plugins: nf-amazon@3.4.2,nf-azure@1.20.2,nf-cloudcache@0.5.0,nf-codecommit@0.5.0,nf-console@1.3.0,nf-google@1.23.3,nf-k8s@1.2.2,nf-tower@1.17.3,nf-wave@1.16.1
+Apr-27 11:32:53.317 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
+Apr-27 11:32:53.317 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
+Apr-27 11:32:53.319 [main] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.12.0 in 'deployment' mode
+Apr-27 11:32:53.329 [main] DEBUG nextflow.util.RetryConfig - Missing nextflow session - using default retry config
+Apr-27 11:32:53.439 [main] INFO  org.pf4j.AbstractPluginManager - No plugins
+Apr-27 11:32:53.458 [main] DEBUG nextflow.config.ConfigBuilder - Found config local: /Users/williamlautert/Documents/GitHub/Lab-code/nextflow.config
+Apr-27 11:32:53.460 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /Users/williamlautert/Documents/GitHub/Lab-code/nextflow.config
+Apr-27 11:32:53.475 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `standard`
+Apr-27 11:32:53.785 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins default=[]
+Apr-27 11:32:53.785 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins resolved requirement=[]
+Apr-27 11:32:53.796 [main] DEBUG n.secret.LocalSecretsProvider - Secrets store: /Users/williamlautert/.nextflow/secrets/store.json
+Apr-27 11:32:53.798 [main] DEBUG nextflow.secret.SecretsLoader - Discovered secrets providers: [nextflow.secret.LocalSecretsProvider@433c6abb] - activable => nextflow.secret.LocalSecretsProvider@433c6abb
+Apr-27 11:32:53.806 [main] DEBUG nextflow.cli.CmdRun - Applied DSL=2 from script declaration
+Apr-27 11:32:53.817 [main] INFO  nextflow.cli.CmdRun - * PREVIEW * null [furious_planck] DSL2 - revision: 584a8fb346
+Apr-27 11:32:53.853 [main] DEBUG nextflow.Session - Session UUID: e06730db-64d6-4424-9f9a-c76fbbe4bc7c
+Apr-27 11:32:53.854 [main] DEBUG nextflow.Session - Run name: furious_planck
+Apr-27 11:32:53.854 [main] DEBUG nextflow.Session - Executor pool size: 8
+Apr-27 11:32:53.862 [main] DEBUG nextflow.file.FilePorter - File porter settings maxRetries=3; maxTransfers=50; pollTimeout=null
+Apr-27 11:32:53.866 [main] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'FileTransfer' minSize=10; maxSize=24; workQueue=LinkedBlockingQueue[-1]; allowCoreThreadTimeout=false
+Apr-27 11:32:53.921 [main] DEBUG nextflow.cli.CmdInfo - Unable to fetch totalSwapSpaceSize - errno: 1 error: sysctlbyname failed
+
+Apr-27 11:32:53.922 [main] DEBUG nextflow.cli.CmdInfo - Unable to fetch freeSwapSpaceSize - errno: 1 error: sysctlbyname failed
+
+Apr-27 11:32:53.922 [main] DEBUG nextflow.cli.CmdRun - 
+  Version: 25.10.2 build 10555
+  Created: 28-11-2025 19:24 UTC (14:24 EDT)
+  System: Mac OS X 13.7.8
+  Runtime: Groovy 4.0.28 on Java HotSpot(TM) 64-Bit Server VM 18.0.1+10-24
+  Encoding: UTF-8 (UTF-8)
+  Process: 66621@Williams-MacBook-Pro-2.local [10.0.0.159]
+  CPUs: 8 - Mem: 16 GB (79.9 MB) - Swap: - (-)
+Apr-27 11:32:53.937 [main] DEBUG nextflow.Session - Work-dir: /Users/williamlautert/Documents/GitHub/Lab-code/work [Mac OS X]
+Apr-27 11:32:53.937 [main] DEBUG nextflow.Session - Script base path does not exist or is not a directory: /Users/williamlautert/Documents/GitHub/Lab-code/bin
+Apr-27 11:32:53.944 [main] DEBUG nextflow.executor.ExecutorFactory - Extension executors providers=[]
+Apr-27 11:32:53.952 [main] DEBUG nextflow.Session - Observer factory (v2): LinObserverFactory
+Apr-27 11:32:53.954 [main] DEBUG nextflow.Session - Observer factory (v2): DefaultObserverFactory
+Apr-27 11:32:53.989 [main] DEBUG nextflow.cache.CacheFactory - Using Nextflow cache factory: nextflow.cache.DefaultCacheFactory
+Apr-27 11:32:54.001 [main] DEBUG nextflow.util.CustomThreadPool - Creating default thread pool > poolSize: 9; maxThreads: 1000
+Apr-27 11:32:54.036 [main] DEBUG nextflow.Session - Session start
+Apr-27 11:32:54.964 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
+Apr-27 11:32:55.120 [main] DEBUG n.script.dsl.ProcessConfigBuilder - Config settings `withName:FASTQC_RAW` matches process FASTQC_RAW
+Apr-27 11:32:55.127 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: local
+Apr-27 11:32:55.127 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Apr-27 11:32:55.134 [main] DEBUG nextflow.executor.Executor - [warm up] executor > local
+Apr-27 11:32:55.140 [main] DEBUG n.processor.LocalPollingMonitor - Creating local task monitor for executor 'local' > cpus=8; memory=16 GB; capacity=8; pollInterval=100ms; dumpInterval=5m
+Apr-27 11:32:55.141 [main] DEBUG n.processor.TaskPollingMonitor - >>> barrier register (monitor: local)
+Apr-27 11:32:55.154 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'FASTQC_RAW': maxForks=0; fair=false; array=0
+Apr-27 11:32:55.183 [main] DEBUG n.script.dsl.ProcessConfigBuilder - Config settings `withName:FASTP_TRIM` matches process FASTP_TRIM
+Apr-27 11:32:55.184 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: local
+Apr-27 11:32:55.184 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Apr-27 11:32:55.185 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'FASTP_TRIM': maxForks=0; fair=false; array=0
+Apr-27 11:32:55.187 [main] DEBUG n.script.dsl.ProcessConfigBuilder - Config settings `withName:FASTQC_TRIMMED` matches process FASTQC_TRIMMED
+Apr-27 11:32:55.188 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: local
+Apr-27 11:32:55.188 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Apr-27 11:32:55.188 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'FASTQC_TRIMMED': maxForks=0; fair=false; array=0
+Apr-27 11:32:55.190 [main] DEBUG n.script.dsl.ProcessConfigBuilder - Config settings `withName:BWA_MEM_FILTER` matches process BWA_MEM_FILTER
+Apr-27 11:32:55.191 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: local
+Apr-27 11:32:55.191 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Apr-27 11:32:55.191 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'BWA_MEM_FILTER': maxForks=0; fair=false; array=0
+Apr-27 11:32:55.205 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: local
+Apr-27 11:32:55.205 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Apr-27 11:32:55.205 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'MULTIQC': maxForks=0; fair=false; array=0
+Apr-27 11:32:55.213 [main] DEBUG n.script.dsl.ProcessConfigBuilder - Config settings `withName:CNVKIT_REFERENCE` matches process CNVKIT_REFERENCE
+Apr-27 11:32:55.214 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: local
+Apr-27 11:32:55.214 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Apr-27 11:32:55.214 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'CNVKIT_REFERENCE': maxForks=0; fair=false; array=0
+Apr-27 11:32:55.227 [main] DEBUG n.script.dsl.ProcessConfigBuilder - Config settings `withName:CNVKIT_BATCH` matches process CNVKIT_BATCH
+Apr-27 11:32:55.228 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: local
+Apr-27 11:32:55.228 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Apr-27 11:32:55.228 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'CNVKIT_BATCH': maxForks=0; fair=false; array=0
+Apr-27 11:32:55.231 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: local
+Apr-27 11:32:55.231 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Apr-27 11:32:55.231 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'CNVKIT_CALL': maxForks=0; fair=false; array=0
+Apr-27 11:32:55.232 [main] DEBUG nextflow.Session - Workflow process names [dsl2]: FASTQC_RAW, CNVKIT_REFERENCE, GATK_PANEL_OF_NORMALS, CNVKIT_BATCH, GATK_PREPROCESS_INTERVALS, BWA_MEM_FILTER, MULTIQC, FASTP_TRIM, GATK_DENOISE, GATK_COLLECT_COUNTS, GATK_CALL_SEGMENTS, GATK_MODEL_SEGMENTS, CNVKIT_CALL, FASTQC_TRIMMED
+Apr-27 11:32:55.234 [main] DEBUG nextflow.script.ScriptRunner - Parsed script files:
+  Script_835cfa363d29da3b: /Users/williamlautert/Documents/GitHub/Lab-code/main.nf
+Apr-27 11:32:55.239 [main] DEBUG n.trace.WorkflowStatsObserver - Workflow completed > WorkflowStats[succeededCount=0; failedCount=0; ignoredCount=0; cachedCount=0; pendingCount=0; submittedCount=0; runningCount=0; retriesCount=0; abortedCount=0; succeedDuration=0ms; failedDuration=0ms; cachedDuration=0ms;loadCpus=0; loadMemory=0; peakRunning=0; peakCpus=0; peakMemory=0; ]
+Apr-27 11:32:55.251 [Task monitor] DEBUG n.processor.TaskPollingMonitor - <<< barrier arrives (monitor: local) - terminating tasks monitor poll loop
+Apr-27 11:32:55.251 [main] DEBUG nextflow.cache.CacheDB - Closing CacheDB done
+Apr-27 11:32:55.274 [main] DEBUG nextflow.util.ThreadPoolManager - Thread pool 'FileTransfer' shutdown completed (hard=false)
+Apr-27 11:32:55.275 [main] DEBUG nextflow.script.ScriptRunner - > Execution complete -- Goodbye

@@ -1,0 +1,659 @@
+Nov-01 12:58:50.439 [main] DEBUG nextflow.cli.Launcher - $> nextflow run nf-core/smrnaseq -r 2.2.3 -resume --input /home/musaqa/mina/samplesheet.csv --protocol custom --outdir nf1 --multiqc_title nf1_results --trim_fastq false --clip_r1 0 --three_prime_clip_r1 0 --mirtrace_species dme --fasta /home/musaqa/mina/Drosophila_melanogaster.BDGP6.32.dna.toplevel.fa --mirna_gtf /home/musaqa/mina/dme.gff3 --mature /home/musaqa/mina/mature.fa --hairpin /home/musaqa/mina/hairpin.fa --filter_contamination true --rrna /home/musaqa/mina/dmerRNA.fa --trna /home/musaqa/mina/dmel-all-tRNA-r6.54.fasta --max_memory 10.GB --max_cpus 8 -profile docker
+Nov-01 12:58:50.592 [main] INFO  nextflow.cli.CmdRun - N E X T F L O W  ~  version 23.10.0
+Nov-01 12:58:50.626 [main] DEBUG nextflow.plugin.PluginsFacade - Setting up plugin manager > mode=prod; embedded=false; plugins-dir=/home/musaqa/.nextflow/plugins; core-plugins: nf-amazon@2.1.4,nf-azure@1.3.2,nf-cloudcache@0.3.0,nf-codecommit@0.1.5,nf-console@1.0.6,nf-ga4gh@1.1.0,nf-google@1.8.3,nf-tower@1.6.3,nf-wave@1.0.0
+Nov-01 12:58:50.640 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
+Nov-01 12:58:50.642 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
+Nov-01 12:58:50.648 [main] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.4.1 in 'deployment' mode
+Nov-01 12:58:50.663 [main] INFO  org.pf4j.AbstractPluginManager - No plugins
+Nov-01 12:58:50.680 [main] DEBUG nextflow.scm.ProviderConfig - Using SCM config path: /home/musaqa/.nextflow/scm
+Nov-01 12:58:52.007 [main] DEBUG nextflow.scm.AssetManager - Git config: /home/musaqa/.nextflow/assets/nf-core/smrnaseq/.git/config; branch: master; remote: origin; url: https://github.com/nf-core/smrnaseq.git
+Nov-01 12:58:52.037 [main] DEBUG nextflow.scm.RepositoryFactory - Found Git repository result: [RepositoryFactory]
+Nov-01 12:58:52.049 [main] DEBUG nextflow.scm.AssetManager - Git config: /home/musaqa/.nextflow/assets/nf-core/smrnaseq/.git/config; branch: master; remote: origin; url: https://github.com/nf-core/smrnaseq.git
+Nov-01 12:58:52.988 [main] DEBUG nextflow.config.ConfigBuilder - Found config base: /home/musaqa/.nextflow/assets/nf-core/smrnaseq/nextflow.config
+Nov-01 12:58:52.989 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /home/musaqa/.nextflow/assets/nf-core/smrnaseq/nextflow.config
+Nov-01 12:58:53.004 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `docker`
+Nov-01 12:58:54.633 [main] DEBUG nextflow.config.ConfigBuilder - Available config profiles: [cfc_dev, ifb_core, denbi_qbic, alice, mjolnir_globe, uppmax, incliva, uge, rosalind_uge, lugh, unibe_ibu, vai, czbiohub_aws, jax, ccga_med, scw, test_no_genome, tigem, tubingen_apg, google, apollo, ipop_up, pdc_kth, googlels, eddie, medair, biowulf, apptainer, bi, bigpurple, adcra, cedars, pawsey_setonix, vsc_kul_uhasselt, pawsey_nimbus, ucl_myriad, utd_ganymede, charliecloud, icr_davros, ceres, munin, arm, rosalind, hasta, cfc, uzh, ebi_codon_slurm, ebc, ku_sund_dangpu, ccga_dx, crick, marvin, biohpc_gen, shifter, mana, mamba, unc_lccc, wehi, awsbatch, wustl_htcf, imperial, maestro, software_license, genotoul, nci_gadi, abims, janelia, nu_genomics, googlebatch, oist, sahmri, mpcdf, leicester, vsc_ugent, sage, cambridge, podman, ebi_codon, cheaha, xanadu, test, computerome, ucd_sonic, seg_globe, sanger, dkfz, pasteur, ethz_euler, test_full, imb, tuos_stanage, azurebatch, hki, crukmi, docker, engaging, gis, hypatia, psmn, eva, fgcz, conda, crg, singularity, uw_hyak_pedslabs, prince, utd_sysbio, debug, genouest, cbe, phoenix, gitpod, seawulf, uod_hpc, fub_curta, uct_hpc, aws_tower, binac]
+Nov-01 12:58:54.707 [main] DEBUG nextflow.cli.CmdRun - Applied DSL=2 from script declararion
+Nov-01 12:58:54.708 [main] INFO  nextflow.cli.CmdRun - Launching `https://github.com/nf-core/smrnaseq` [tender_saha] DSL2 - revision: 18d6c84926 [2.2.3]
+Nov-01 12:58:54.711 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins declared=[nf-validation]
+Nov-01 12:58:54.711 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins default=[]
+Nov-01 12:58:54.712 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins resolved requirement=[nf-validation]
+Nov-01 12:58:54.712 [main] DEBUG nextflow.plugin.PluginUpdater - Installing plugin nf-validation version: latest
+Nov-01 12:58:54.886 [main] INFO  org.pf4j.AbstractPluginManager - Plugin 'nf-validation@1.1.1' resolved
+Nov-01 12:58:54.886 [main] INFO  org.pf4j.AbstractPluginManager - Start plugin 'nf-validation@1.1.1'
+Nov-01 12:58:54.894 [main] DEBUG nextflow.plugin.BasePlugin - Plugin started nf-validation@1.1.1
+Nov-01 12:58:54.903 [main] DEBUG n.secret.LocalSecretsProvider - Secrets store: /home/musaqa/.nextflow/secrets/store.json
+Nov-01 12:58:54.915 [main] DEBUG nextflow.secret.SecretsLoader - Discovered secrets providers: [nextflow.secret.LocalSecretsProvider@1b475663] - activable => nextflow.secret.LocalSecretsProvider@1b475663
+Nov-01 12:58:55.016 [main] DEBUG nextflow.Session - Session UUID: 699e29b7-97a3-4c23-874b-b6ef45e5f8a7
+Nov-01 12:58:55.017 [main] DEBUG nextflow.Session - Run name: tender_saha
+Nov-01 12:58:55.018 [main] DEBUG nextflow.Session - Executor pool size: 8
+Nov-01 12:58:55.027 [main] DEBUG nextflow.file.FilePorter - File porter settings maxRetries=3; maxTransfers=50; pollTimeout=null
+Nov-01 12:58:55.056 [main] DEBUG nextflow.cli.CmdRun - 
+  Version: 23.10.0 build 5889
+  Created: 15-10-2023 15:07 UTC (17:07 CEST)
+  System: Linux 5.10.102.1-microsoft-standard-WSL2
+  Runtime: Groovy 3.0.19 on OpenJDK 64-Bit Server VM 21-internal-adhoc.conda.src
+  Encoding: UTF-8 (UTF-8)
+  Process: 1063@PavleE-s44 [127.0.1.1]
+  CPUs: 8 - Mem: 10.8 GB (9.9 GB) - Swap: 3 GB (3 GB) - Virtual threads ON
+Nov-01 12:58:55.080 [main] DEBUG nextflow.Session - Work-dir: /home/musaqa/mina/work [ext2/ext3]
+Nov-01 12:58:55.107 [main] DEBUG nextflow.executor.ExecutorFactory - Extension executors providers=[]
+Nov-01 12:58:55.126 [main] DEBUG nextflow.Session - Observer factory: DefaultObserverFactory
+Nov-01 12:58:55.217 [main] DEBUG nextflow.cache.CacheFactory - Using Nextflow cache factory: nextflow.cache.DefaultCacheFactory
+Nov-01 12:58:55.228 [main] DEBUG nextflow.util.CustomPoolFactory - Creating virtual thread pool
+Nov-01 12:58:55.340 [main] DEBUG nextflow.Session - Session start
+Nov-01 12:58:55.347 [main] DEBUG nextflow.trace.TraceFileObserver - Workflow started -- trace file: /home/musaqa/mina/nf1/pipeline_info/execution_trace_2023-11-01_12-58-54.txt
+Nov-01 12:58:55.358 [main] DEBUG nextflow.Session - Using default localLib path: /home/musaqa/.nextflow/assets/nf-core/smrnaseq/lib
+Nov-01 12:58:55.363 [main] DEBUG nextflow.Session - Adding to the classpath library: /home/musaqa/.nextflow/assets/nf-core/smrnaseq/lib
+Nov-01 12:58:55.363 [main] DEBUG nextflow.Session - Adding to the classpath library: /home/musaqa/.nextflow/assets/nf-core/smrnaseq/lib/nfcore_external_java_deps.jar
+Nov-01 12:58:55.872 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
+Nov-01 12:58:55.904 [main] DEBUG nextflow.script.IncludeDef - Loading included plugin extensions with names: [validateParameters:validateParameters, paramsHelp:paramsHelp]; plugin Id: nf-validation
+Nov-01 12:58:55.931 [main] DEBUG nextflow.validation.SchemaValidator - Starting parameters validation
+Nov-01 12:58:56.102 [main] DEBUG n.validation.DirectoryPathValidator - S3 paths are not supported by 'DirectoryPathValidator': 's3://ngi-igenomes/igenomes'
+Nov-01 12:58:56.105 [main] DEBUG nextflow.validation.SchemaValidator - Finishing parameters validation
+Nov-01 12:58:56.111 [main] WARN  nextflow.Nextflow - Please make sure to specify all required clipping and trimming parameters, otherwise only adapter detection will be performed.
+Nov-01 12:58:56.113 [main] WARN  nextflow.Nextflow - Running with Protocol custom
+Nov-01 12:58:56.114 [main] WARN  nextflow.Nextflow - Therefore using Adapter: null
+Nov-01 12:58:56.115 [main] WARN  nextflow.Nextflow - Clipping 0 bases from R1
+Nov-01 12:58:56.116 [main] WARN  nextflow.Nextflow - And clipping 0 bases from 3' end
+Nov-01 12:58:56.505 [main] DEBUG nextflow.script.IncludeDef - Loading included plugin extensions with names: [paramsSummaryLog:paramsSummaryLog, paramsSummaryMap:paramsSummaryMap]; plugin Id: nf-validation
+Nov-01 12:58:56.525 [main] INFO  nextflow.Nextflow - 
+
+-[2m----------------------------------------------------[0m-
+                                        [0;32m,--.[0;30m/[0;32m,-.[0m
+[0;34m        ___     __   __   __   ___     [0;32m/,-._.--~'[0m
+[0;34m  |\ | |__  __ /  ` /  \ |__) |__         [0;33m}  {[0m
+[0;34m  | \| |       \__, \__/ |  \ |___     [0;32m\`-._,-`-,[0m
+                                        [0;32m`._,._,'[0m
+[0;35m  nf-core/smrnaseq v2.2.3-g18d6c84[0m
+-[2m----------------------------------------------------[0m-
+[1mCore Nextflow options[0m
+  [0;34mrevision            : [0;32m2.2.3[0m
+  [0;34mrunName             : [0;32mtender_saha[0m
+  [0;34mcontainerEngine     : [0;32mdocker[0m
+  [0;34mlaunchDir           : [0;32m/home/musaqa/mina[0m
+  [0;34mworkDir             : [0;32m/home/musaqa/mina/work[0m
+  [0;34mprojectDir          : [0;32m/home/musaqa/.nextflow/assets/nf-core/smrnaseq[0m
+  [0;34muserName            : [0;32mmusaqa[0m
+  [0;34mprofile             : [0;32mdocker[0m
+  [0;34mconfigFiles         : [0;32m[0m
+
+[1mInput/output options[0m
+  [0;34minput               : [0;32m/home/musaqa/mina/samplesheet.csv[0m
+  [0;34mprotocol            : [0;32mcustom[0m
+  [0;34moutdir              : [0;32mnf1[0m
+  [0;34mmultiqc_title       : [0;32mnf1_results[0m
+
+[1mReference genome options[0m
+  [0;34mmirtrace_species    : [0;32mdme[0m
+  [0;34mfasta               : [0;32m/home/musaqa/mina/Drosophila_melanogaster.BDGP6.32.dna.toplevel.fa[0m
+  [0;34mmirna_gtf           : [0;32m/home/musaqa/mina/dme.gff3[0m
+  [0;34mmature              : [0;32m/home/musaqa/mina/mature.fa[0m
+  [0;34mhairpin             : [0;32m/home/musaqa/mina/hairpin.fa[0m
+
+[1mTrimming options[0m
+  [0;34mclip_r1             : [0;32m0[0m
+  [0;34mthree_prime_clip_r1 : [0;32m0[0m
+  [0;34mthree_prime_adapter : [0;32mnull[0m
+  [0;34mtrim_fastq          : [0;32mfalse[0m
+
+[1mContamination filter options[0m
+  [0;34mfilter_contamination: [0;32mtrue[0m
+  [0;34mrrna                : [0;32m/home/musaqa/mina/dmerRNA.fa[0m
+  [0;34mtrna                : [0;32m/home/musaqa/mina/dmel-all-tRNA-r6.54.fasta[0m
+
+[1mMax job request options[0m
+  [0;34mmax_cpus            : [0;32m8[0m
+  [0;34mmax_memory          : [0;32m10.GB[0m
+
+!! Only displaying parameters that differ from the pipeline defaults !!
+-[2m----------------------------------------------------[0m-
+If you use nf-core/smrnaseq for your analysis please cite:
+
+* The pipeline
+  https://zenodo.org/badge/latestdoi/140590861
+
+* The nf-core framework
+  https://doi.org/10.1038/s41587-020-0439-x
+
+* Software dependencies
+  https://github.com/nf-core/smrnaseq/blob/master/CITATIONS.md
+
+Nov-01 12:58:59.838 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:process_single` matches labels `process_single` for process with name NFCORE_SMRNASEQ:SMRNASEQ:INPUT_CHECK:SAMPLESHEET_CHECK
+Nov-01 12:58:59.842 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:NFCORE_SMRNASEQ:SMRNASEQ:INPUT_CHECK:SAMPLESHEET_CHECK` matches process NFCORE_SMRNASEQ:SMRNASEQ:INPUT_CHECK:SAMPLESHEET_CHECK
+Nov-01 12:58:59.853 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Nov-01 12:58:59.853 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Nov-01 12:58:59.863 [main] DEBUG nextflow.executor.Executor - [warm up] executor > local
+Nov-01 12:58:59.874 [main] DEBUG n.processor.LocalPollingMonitor - Creating local task monitor for executor 'local' > cpus=8; memory=10.8 GB; capacity=8; pollInterval=100ms; dumpInterval=5m
+Nov-01 12:58:59.880 [main] DEBUG n.processor.TaskPollingMonitor - >>> barrier register (monitor: local)
+Nov-01 12:59:00.035 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:process_single` matches labels `process_single` for process with name NFCORE_SMRNASEQ:SMRNASEQ:CAT_FASTQ
+Nov-01 12:59:00.036 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:CAT_FASTQ` matches process NFCORE_SMRNASEQ:SMRNASEQ:CAT_FASTQ
+Nov-01 12:59:00.040 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Nov-01 12:59:00.040 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Nov-01 12:59:00.071 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:process_medium` matches labels `process_medium` for process with name NFCORE_SMRNASEQ:SMRNASEQ:FASTQC_FASTP:FASTQC_RAW
+Nov-01 12:59:00.072 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:.*:FASTQC_FASTP:FASTQC_.*` matches process NFCORE_SMRNASEQ:SMRNASEQ:FASTQC_FASTP:FASTQC_RAW
+Nov-01 12:59:00.075 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Nov-01 12:59:00.075 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Nov-01 12:59:00.092 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:process_medium` matches labels `process_medium` for process with name NFCORE_SMRNASEQ:SMRNASEQ:FASTQC_FASTP:FASTP
+Nov-01 12:59:00.093 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:FASTP` matches process NFCORE_SMRNASEQ:SMRNASEQ:FASTQC_FASTP:FASTP
+Nov-01 12:59:00.096 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Nov-01 12:59:00.096 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Nov-01 12:59:00.118 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:process_medium` matches labels `process_medium` for process with name NFCORE_SMRNASEQ:SMRNASEQ:FASTQC_FASTP:FASTQC_TRIM
+Nov-01 12:59:00.119 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:.*:FASTQC_FASTP:FASTQC_.*` matches process NFCORE_SMRNASEQ:SMRNASEQ:FASTQC_FASTP:FASTQC_TRIM
+Nov-01 12:59:00.119 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:.*:.*:FASTQC_FASTP:FASTQC_TRIM` matches process NFCORE_SMRNASEQ:SMRNASEQ:FASTQC_FASTP:FASTQC_TRIM
+Nov-01 12:59:00.120 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Nov-01 12:59:00.121 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Nov-01 12:59:00.152 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:process_medium` matches labels `process_medium` for process with name NFCORE_SMRNASEQ:SMRNASEQ:MIRTRACE:MIRTRACE_RUN
+Nov-01 12:59:00.153 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:MIRTRACE_RUN` matches process NFCORE_SMRNASEQ:SMRNASEQ:MIRTRACE:MIRTRACE_RUN
+Nov-01 12:59:00.154 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Nov-01 12:59:00.154 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Nov-01 12:59:00.167 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:process_medium` matches labels `process_medium` for process with name NFCORE_SMRNASEQ:SMRNASEQ:CONTAMINANT_FILTER:INDEX_RRNA
+Nov-01 12:59:00.170 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Nov-01 12:59:00.170 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Nov-01 12:59:00.181 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:process_medium` matches labels `process_medium` for process with name NFCORE_SMRNASEQ:SMRNASEQ:CONTAMINANT_FILTER:MAP_RRNA
+Nov-01 12:59:00.185 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Nov-01 12:59:00.185 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Nov-01 12:59:00.204 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:process_medium` matches labels `process_medium` for process with name NFCORE_SMRNASEQ:SMRNASEQ:CONTAMINANT_FILTER:INDEX_TRNA
+Nov-01 12:59:00.205 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Nov-01 12:59:00.206 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Nov-01 12:59:00.213 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:process_medium` matches labels `process_medium` for process with name NFCORE_SMRNASEQ:SMRNASEQ:CONTAMINANT_FILTER:MAP_TRNA
+Nov-01 12:59:00.215 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Nov-01 12:59:00.215 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Nov-01 12:59:00.241 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:process_medium` matches labels `process_medium` for process with name NFCORE_SMRNASEQ:SMRNASEQ:CONTAMINANT_FILTER:FILTER_STATS
+Nov-01 12:59:00.243 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Nov-01 12:59:00.244 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Nov-01 12:59:00.254 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:process_medium` matches labels `process_medium` for process with name NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:PARSE_MATURE
+Nov-01 12:59:00.255 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:PARSE_.*` matches process NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:PARSE_MATURE
+Nov-01 12:59:00.256 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Nov-01 12:59:00.257 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Nov-01 12:59:00.267 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:process_medium` matches labels `process_medium` for process with name NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:FORMAT_MATURE
+Nov-01 12:59:00.268 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:FORMAT_.*` matches process NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:FORMAT_MATURE
+Nov-01 12:59:00.269 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Nov-01 12:59:00.269 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Nov-01 12:59:00.275 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:process_medium` matches labels `process_medium` for process with name NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:PARSE_HAIRPIN
+Nov-01 12:59:00.276 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:PARSE_.*` matches process NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:PARSE_HAIRPIN
+Nov-01 12:59:00.277 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Nov-01 12:59:00.277 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Nov-01 12:59:00.284 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:process_medium` matches labels `process_medium` for process with name NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:FORMAT_HAIRPIN
+Nov-01 12:59:00.285 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:FORMAT_.*` matches process NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:FORMAT_HAIRPIN
+Nov-01 12:59:00.286 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Nov-01 12:59:00.286 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Nov-01 12:59:00.295 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:process_medium` matches labels `process_medium` for process with name NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:INDEX_MATURE
+Nov-01 12:59:00.296 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Nov-01 12:59:00.296 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Nov-01 12:59:00.303 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:process_medium` matches labels `process_medium` for process with name NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:INDEX_HAIRPIN
+Nov-01 12:59:00.304 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Nov-01 12:59:00.304 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Nov-01 12:59:00.318 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:process_medium` matches labels `process_medium` for process with name NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:BOWTIE_MAP_MATURE
+Nov-01 12:59:00.319 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:BOWTIE_MAP_.*` matches process NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:BOWTIE_MAP_MATURE
+Nov-01 12:59:00.321 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Nov-01 12:59:00.321 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Nov-01 12:59:00.335 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:process_medium` matches labels `process_medium` for process with name NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:BOWTIE_MAP_HAIRPIN
+Nov-01 12:59:00.336 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:BOWTIE_MAP_.*` matches process NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:BOWTIE_MAP_HAIRPIN
+Nov-01 12:59:00.339 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Nov-01 12:59:00.340 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Nov-01 12:59:00.356 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:process_medium` matches labels `process_medium` for process with name NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:BAM_STATS_MATURE:SAMTOOLS_SORT
+Nov-01 12:59:00.356 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:BAM_STATS_.*:SAMTOOLS_SORT` matches process NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:BAM_STATS_MATURE:SAMTOOLS_SORT
+Nov-01 12:59:00.358 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Nov-01 12:59:00.359 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Nov-01 12:59:00.373 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:process_low` matches labels `process_low` for process with name NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:BAM_STATS_MATURE:SAMTOOLS_INDEX
+Nov-01 12:59:00.375 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Nov-01 12:59:00.375 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Nov-01 12:59:00.402 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:process_single` matches labels `process_single` for process with name NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:BAM_STATS_MATURE:BAM_STATS_SAMTOOLS:SAMTOOLS_STATS
+Nov-01 12:59:00.403 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:BAM_STATS_.*:BAM_STATS_SAMTOOLS:.*` matches process NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:BAM_STATS_MATURE:BAM_STATS_SAMTOOLS:SAMTOOLS_STATS
+Nov-01 12:59:00.403 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Nov-01 12:59:00.404 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Nov-01 12:59:00.421 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:process_single` matches labels `process_single` for process with name NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:BAM_STATS_MATURE:BAM_STATS_SAMTOOLS:SAMTOOLS_FLAGSTAT
+Nov-01 12:59:00.421 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:BAM_STATS_.*:BAM_STATS_SAMTOOLS:.*` matches process NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:BAM_STATS_MATURE:BAM_STATS_SAMTOOLS:SAMTOOLS_FLAGSTAT
+Nov-01 12:59:00.422 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Nov-01 12:59:00.423 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Nov-01 12:59:00.436 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:process_single` matches labels `process_single` for process with name NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:BAM_STATS_MATURE:BAM_STATS_SAMTOOLS:SAMTOOLS_IDXSTATS
+Nov-01 12:59:00.436 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:BAM_STATS_.*:BAM_STATS_SAMTOOLS:.*` matches process NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:BAM_STATS_MATURE:BAM_STATS_SAMTOOLS:SAMTOOLS_IDXSTATS
+Nov-01 12:59:00.438 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Nov-01 12:59:00.438 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Nov-01 12:59:00.451 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:process_medium` matches labels `process_medium` for process with name NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:BAM_STATS_HAIRPIN:SAMTOOLS_SORT
+Nov-01 12:59:00.452 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:BAM_STATS_.*:SAMTOOLS_SORT` matches process NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:BAM_STATS_HAIRPIN:SAMTOOLS_SORT
+Nov-01 12:59:00.453 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Nov-01 12:59:00.453 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Nov-01 12:59:00.460 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:process_low` matches labels `process_low` for process with name NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:BAM_STATS_HAIRPIN:SAMTOOLS_INDEX
+Nov-01 12:59:00.463 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Nov-01 12:59:00.463 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Nov-01 12:59:00.480 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:process_single` matches labels `process_single` for process with name NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:BAM_STATS_HAIRPIN:BAM_STATS_SAMTOOLS:SAMTOOLS_STATS
+Nov-01 12:59:00.481 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:BAM_STATS_.*:BAM_STATS_SAMTOOLS:.*` matches process NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:BAM_STATS_HAIRPIN:BAM_STATS_SAMTOOLS:SAMTOOLS_STATS
+Nov-01 12:59:00.483 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Nov-01 12:59:00.483 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Nov-01 12:59:00.490 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:process_single` matches labels `process_single` for process with name NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:BAM_STATS_HAIRPIN:BAM_STATS_SAMTOOLS:SAMTOOLS_FLAGSTAT
+Nov-01 12:59:00.491 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:BAM_STATS_.*:BAM_STATS_SAMTOOLS:.*` matches process NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:BAM_STATS_HAIRPIN:BAM_STATS_SAMTOOLS:SAMTOOLS_FLAGSTAT
+Nov-01 12:59:00.492 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Nov-01 12:59:00.493 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Nov-01 12:59:00.499 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:process_single` matches labels `process_single` for process with name NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:BAM_STATS_HAIRPIN:BAM_STATS_SAMTOOLS:SAMTOOLS_IDXSTATS
+Nov-01 12:59:00.499 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:BAM_STATS_.*:BAM_STATS_SAMTOOLS:.*` matches process NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:BAM_STATS_HAIRPIN:BAM_STATS_SAMTOOLS:SAMTOOLS_IDXSTATS
+Nov-01 12:59:00.500 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Nov-01 12:59:00.500 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Nov-01 12:59:00.528 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:process_medium` matches labels `process_medium` for process with name NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:EDGER_QC
+Nov-01 12:59:00.528 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:EDGER_QC` matches process NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:EDGER_QC
+Nov-01 12:59:00.530 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Nov-01 12:59:00.530 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Nov-01 12:59:00.539 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:process_medium` matches labels `process_medium` for process with name NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:SEQCLUSTER_SEQUENCES
+Nov-01 12:59:00.540 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:SEQCLUSTER_SEQUENCES` matches process NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:SEQCLUSTER_SEQUENCES
+Nov-01 12:59:00.542 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Nov-01 12:59:00.542 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Nov-01 12:59:00.551 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:process_medium` matches labels `process_medium` for process with name NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:BOWTIE_MAP_SEQCLUSTER
+Nov-01 12:59:00.552 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:BOWTIE_MAP_.*` matches process NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:BOWTIE_MAP_SEQCLUSTER
+Nov-01 12:59:00.553 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Nov-01 12:59:00.553 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Nov-01 12:59:00.571 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:process_medium` matches labels `process_medium` for process with name NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:MIRTOP_QUANT
+Nov-01 12:59:00.572 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:MIRTOP_QUANT` matches process NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:MIRTOP_QUANT
+Nov-01 12:59:00.572 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Nov-01 12:59:00.573 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Nov-01 12:59:00.581 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:process_medium` matches labels `process_medium` for process with name NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:TABLE_MERGE
+Nov-01 12:59:00.581 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:TABLE_MERGE` matches process NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:TABLE_MERGE
+Nov-01 12:59:00.582 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Nov-01 12:59:00.582 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Nov-01 12:59:00.602 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:process_medium` matches labels `process_medium` for process with name NFCORE_SMRNASEQ:SMRNASEQ:GENOME_QUANT:INDEX_GENOME
+Nov-01 12:59:00.603 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:INDEX_GENOME` matches process NFCORE_SMRNASEQ:SMRNASEQ:GENOME_QUANT:INDEX_GENOME
+Nov-01 12:59:00.605 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Nov-01 12:59:00.605 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Nov-01 12:59:00.620 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:process_medium` matches labels `process_medium` for process with name NFCORE_SMRNASEQ:SMRNASEQ:GENOME_QUANT:BOWTIE_MAP_GENOME
+Nov-01 12:59:00.620 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:NFCORE_SMRNASEQ:SMRNASEQ:GENOME_QUANT:BOWTIE_MAP_.*` matches process NFCORE_SMRNASEQ:SMRNASEQ:GENOME_QUANT:BOWTIE_MAP_GENOME
+Nov-01 12:59:00.621 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Nov-01 12:59:00.621 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Nov-01 12:59:00.637 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:process_medium` matches labels `process_medium` for process with name NFCORE_SMRNASEQ:SMRNASEQ:GENOME_QUANT:BAM_SORT_STATS_SAMTOOLS:SAMTOOLS_SORT
+Nov-01 12:59:00.638 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:NFCORE_SMRNASEQ:SMRNASEQ:GENOME_QUANT:BAM_SORT_STATS_SAMTOOLS:SAMTOOLS_.*` matches process NFCORE_SMRNASEQ:SMRNASEQ:GENOME_QUANT:BAM_SORT_STATS_SAMTOOLS:SAMTOOLS_SORT
+Nov-01 12:59:00.639 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Nov-01 12:59:00.639 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Nov-01 12:59:00.653 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:process_low` matches labels `process_low` for process with name NFCORE_SMRNASEQ:SMRNASEQ:GENOME_QUANT:BAM_SORT_STATS_SAMTOOLS:SAMTOOLS_INDEX
+Nov-01 12:59:00.654 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:NFCORE_SMRNASEQ:SMRNASEQ:GENOME_QUANT:BAM_SORT_STATS_SAMTOOLS:SAMTOOLS_.*` matches process NFCORE_SMRNASEQ:SMRNASEQ:GENOME_QUANT:BAM_SORT_STATS_SAMTOOLS:SAMTOOLS_INDEX
+Nov-01 12:59:00.656 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Nov-01 12:59:00.656 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Nov-01 12:59:00.677 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:process_single` matches labels `process_single` for process with name NFCORE_SMRNASEQ:SMRNASEQ:GENOME_QUANT:BAM_SORT_STATS_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_STATS
+Nov-01 12:59:00.678 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:NFCORE_SMRNASEQ:SMRNASEQ:GENOME_QUANT:BAM_SORT_STATS_SAMTOOLS:BAM_STATS_SAMTOOLS:.*` matches process NFCORE_SMRNASEQ:SMRNASEQ:GENOME_QUANT:BAM_SORT_STATS_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_STATS
+Nov-01 12:59:00.678 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Nov-01 12:59:00.679 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Nov-01 12:59:00.688 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:process_single` matches labels `process_single` for process with name NFCORE_SMRNASEQ:SMRNASEQ:GENOME_QUANT:BAM_SORT_STATS_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_FLAGSTAT
+Nov-01 12:59:00.688 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:NFCORE_SMRNASEQ:SMRNASEQ:GENOME_QUANT:BAM_SORT_STATS_SAMTOOLS:BAM_STATS_SAMTOOLS:.*` matches process NFCORE_SMRNASEQ:SMRNASEQ:GENOME_QUANT:BAM_SORT_STATS_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_FLAGSTAT
+Nov-01 12:59:00.689 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Nov-01 12:59:00.689 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Nov-01 12:59:00.696 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:process_single` matches labels `process_single` for process with name NFCORE_SMRNASEQ:SMRNASEQ:GENOME_QUANT:BAM_SORT_STATS_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_IDXSTATS
+Nov-01 12:59:00.696 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:NFCORE_SMRNASEQ:SMRNASEQ:GENOME_QUANT:BAM_SORT_STATS_SAMTOOLS:BAM_STATS_SAMTOOLS:.*` matches process NFCORE_SMRNASEQ:SMRNASEQ:GENOME_QUANT:BAM_SORT_STATS_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_IDXSTATS
+Nov-01 12:59:00.697 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Nov-01 12:59:00.697 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Nov-01 12:59:00.714 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:process_low` matches labels `process_low` for process with name NFCORE_SMRNASEQ:SMRNASEQ:MIRDEEP2:MIRDEEP2_PIGZ
+Nov-01 12:59:00.715 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Nov-01 12:59:00.715 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Nov-01 12:59:00.725 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:process_medium` matches labels `process_medium` for process with name NFCORE_SMRNASEQ:SMRNASEQ:MIRDEEP2:MIRDEEP2_MAPPER
+Nov-01 12:59:00.726 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:MIRDEEP2_MAPPER` matches process NFCORE_SMRNASEQ:SMRNASEQ:MIRDEEP2:MIRDEEP2_MAPPER
+Nov-01 12:59:00.727 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Nov-01 12:59:00.727 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Nov-01 12:59:00.739 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:process_medium` matches labels `process_medium` for process with name NFCORE_SMRNASEQ:SMRNASEQ:MIRDEEP2:MIRDEEP2_RUN
+Nov-01 12:59:00.740 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Nov-01 12:59:00.741 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Nov-01 12:59:00.781 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:process_single` matches labels `process_single` for process with name NFCORE_SMRNASEQ:SMRNASEQ:CUSTOM_DUMPSOFTWAREVERSIONS
+Nov-01 12:59:00.782 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:CUSTOM_DUMPSOFTWAREVERSIONS` matches process NFCORE_SMRNASEQ:SMRNASEQ:CUSTOM_DUMPSOFTWAREVERSIONS
+Nov-01 12:59:00.782 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Nov-01 12:59:00.782 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Nov-01 12:59:00.895 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:process_single` matches labels `process_single` for process with name NFCORE_SMRNASEQ:SMRNASEQ:MULTIQC
+Nov-01 12:59:00.895 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:MULTIQC` matches process NFCORE_SMRNASEQ:SMRNASEQ:MULTIQC
+Nov-01 12:59:00.896 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Nov-01 12:59:00.896 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Nov-01 12:59:00.902 [main] DEBUG nextflow.Session - Workflow process names [dsl2]: NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:BAM_STATS_HAIRPIN:BAM_STATS_SAMTOOLS:SAMTOOLS_FLAGSTAT, MAP_RRNA, SEQCLUSTER_SEQUENCES, NFCORE_SMRNASEQ:SMRNASEQ:CONTAMINANT_FILTER:INDEX_RRNA, BOWTIE_MAP_GENOME, INDEX_OTHER, NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:PARSE_HAIRPIN, NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:BAM_STATS_HAIRPIN:BAM_STATS_SAMTOOLS:SAMTOOLS_IDXSTATS, CAT_FASTQ, SAMTOOLS_STATS, INDEX_GENOME, NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:FORMAT_HAIRPIN, NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:BAM_STATS_MATURE:BAM_STATS_SAMTOOLS:SAMTOOLS_IDXSTATS, NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:SEQCLUSTER_SEQUENCES, NFCORE_SMRNASEQ:SMRNASEQ:MIRDEEP2:MIRDEEP2_PIGZ, NFCORE_SMRNASEQ:SMRNASEQ:INPUT_CHECK:SAMPLESHEET_CHECK, NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:BAM_STATS_MATURE:SAMTOOLS_SORT, INDEX_TRNA, NFCORE_SMRNASEQ:SMRNASEQ:GENOME_QUANT:INDEX_GENOME, NFCORE_SMRNASEQ:SMRNASEQ:MIRTRACE:MIRTRACE_RUN, INDEX_HAIRPIN, NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:INDEX_HAIRPIN, NFCORE_SMRNASEQ:SMRNASEQ:CONTAMINANT_FILTER:MAP_RRNA, SAMTOOLS_INDEX, NFCORE_SMRNASEQ:SMRNASEQ:CONTAMINANT_FILTER:FILTER_STATS, FASTQC, NFCORE_SMRNASEQ:SMRNASEQ:GENOME_QUANT:BAM_SORT_STATS_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_STATS, NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:BOWTIE_MAP_MATURE, NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:EDGER_QC, MULTIQC, NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:MIRTOP_QUANT, NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:BAM_STATS_MATURE:SAMTOOLS_INDEX, FORMAT_HAIRPIN, NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:BAM_STATS_MATURE:BAM_STATS_SAMTOOLS:SAMTOOLS_FLAGSTAT, NFCORE_SMRNASEQ:SMRNASEQ:CONTAMINANT_FILTER:INDEX_TRNA, PARSE_HAIRPIN, NFCORE_SMRNASEQ:SMRNASEQ:MIRDEEP2:MIRDEEP2_RUN, INDEX_RRNA, MIRTRACE_RUN, BOWTIE_MAP_HAIRPIN, NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:FORMAT_MATURE, NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:BAM_STATS_HAIRPIN:SAMTOOLS_INDEX, INDEX_PIRNA, SAMTOOLS_FLAGSTAT, SAMPLESHEET_CHECK, INDEX_CDNA, BOWTIE_MAP_MATURE, NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:BAM_STATS_HAIRPIN:BAM_STATS_SAMTOOLS:SAMTOOLS_STATS, NFCORE_SMRNASEQ:SMRNASEQ:GENOME_QUANT:BOWTIE_MAP_GENOME, NFCORE_SMRNASEQ:SMRNASEQ:FASTQC_FASTP:FASTQC_RAW, BLAT_CDNA, MAP_PIRNA, MIRDEEP2_RUN, INDEX_MATURE, MAP_OTHER, NFCORE_SMRNASEQ:SMRNASEQ:CONTAMINANT_FILTER:MAP_TRNA, NFCORE_SMRNASEQ:SMRNASEQ:CAT_FASTQ, BOWTIE_MAP_SEQCLUSTER, FORMAT_MATURE, FASTQC_TRIM, INDEX_MIRNA, FASTP, NFCORE_SMRNASEQ:SMRNASEQ:FASTQC_FASTP:FASTQC_TRIM, NFCORE_SMRNASEQ:SMRNASEQ:GENOME_QUANT:BAM_SORT_STATS_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_FLAGSTAT, NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:TABLE_MERGE, BLAT_NCRNA, NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:BOWTIE_MAP_SEQCLUSTER, NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:BAM_STATS_MATURE:BAM_STATS_SAMTOOLS:SAMTOOLS_STATS, FASTQC_RAW, NFCORE_SMRNASEQ:SMRNASEQ:MULTIQC, MIRDEEP2_PIGZ, FILTER_STATS, NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:BOWTIE_MAP_HAIRPIN, EDGER_QC, FORMAT_FASTA_MIRNA, NFCORE_SMRNASEQ:SMRNASEQ:GENOME_QUANT:BAM_SORT_STATS_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_IDXSTATS, INDEX_CONTAMINANTS, BLAT_PIRNA, PARSE_MATURE, BLAT_OTHER, BOWTIE_MAP_SEQ, NFCORE_SMRNASEQ:SMRNASEQ:CUSTOM_DUMPSOFTWAREVERSIONS, NFCORE_SMRNASEQ:SMRNASEQ:MIRDEEP2:MIRDEEP2_MAPPER, NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:PARSE_MATURE, MAP_TRNA, INDEX_NCRNA, NFCORE_SMRNASEQ:SMRNASEQ:FASTQC_FASTP:FASTP, BOWTIE_MAP_CONTAMINANTS, SAMTOOLS_SORT, NFCORE_SMRNASEQ:SMRNASEQ:GENOME_QUANT:BAM_SORT_STATS_SAMTOOLS:SAMTOOLS_SORT, MIRDEEP2_MAPPER, BLAT_MIRNA, MAP_NCRNA, PARSE_FASTA_MIRNA, NFCORE_SMRNASEQ:SMRNASEQ:GENOME_QUANT:BAM_SORT_STATS_SAMTOOLS:SAMTOOLS_INDEX, NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:INDEX_MATURE, MIRTOP_QUANT, TABLE_MERGE, SAMTOOLS_IDXSTATS, CUSTOM_DUMPSOFTWAREVERSIONS, MAP_CDNA, NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:BAM_STATS_HAIRPIN:SAMTOOLS_SORT
+Nov-01 12:59:00.961 [main] DEBUG nextflow.Session - Igniting dataflow network (80)
+Nov-01 12:59:00.973 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > NFCORE_SMRNASEQ:SMRNASEQ:INPUT_CHECK:SAMPLESHEET_CHECK
+Nov-01 12:59:00.977 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > NFCORE_SMRNASEQ:SMRNASEQ:CAT_FASTQ
+Nov-01 12:59:00.979 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > NFCORE_SMRNASEQ:SMRNASEQ:FASTQC_FASTP:FASTQC_RAW
+Nov-01 12:59:00.980 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > NFCORE_SMRNASEQ:SMRNASEQ:FASTQC_FASTP:FASTP
+Nov-01 12:59:00.983 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > NFCORE_SMRNASEQ:SMRNASEQ:FASTQC_FASTP:FASTQC_TRIM
+Nov-01 12:59:00.983 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > NFCORE_SMRNASEQ:SMRNASEQ:MIRTRACE:MIRTRACE_RUN
+Nov-01 12:59:00.999 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > NFCORE_SMRNASEQ:SMRNASEQ:CONTAMINANT_FILTER:INDEX_RRNA
+Nov-01 12:59:01.002 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > NFCORE_SMRNASEQ:SMRNASEQ:CONTAMINANT_FILTER:MAP_RRNA
+Nov-01 12:59:01.005 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > NFCORE_SMRNASEQ:SMRNASEQ:CONTAMINANT_FILTER:INDEX_TRNA
+Nov-01 12:59:01.006 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > NFCORE_SMRNASEQ:SMRNASEQ:CONTAMINANT_FILTER:MAP_TRNA
+Nov-01 12:59:01.010 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > NFCORE_SMRNASEQ:SMRNASEQ:CONTAMINANT_FILTER:FILTER_STATS
+Nov-01 12:59:01.015 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:PARSE_MATURE
+Nov-01 12:59:01.017 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:FORMAT_MATURE
+Nov-01 12:59:01.018 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:PARSE_HAIRPIN
+Nov-01 12:59:01.025 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:FORMAT_HAIRPIN
+Nov-01 12:59:01.026 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:INDEX_MATURE
+Nov-01 12:59:01.028 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:INDEX_HAIRPIN
+Nov-01 12:59:01.029 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:BOWTIE_MAP_MATURE
+Nov-01 12:59:01.033 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:BOWTIE_MAP_HAIRPIN
+Nov-01 12:59:01.041 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:BAM_STATS_MATURE:SAMTOOLS_SORT
+Nov-01 12:59:01.046 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:BAM_STATS_MATURE:SAMTOOLS_INDEX
+Nov-01 12:59:01.048 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:BAM_STATS_MATURE:BAM_STATS_SAMTOOLS:SAMTOOLS_STATS
+Nov-01 12:59:01.056 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:BAM_STATS_MATURE:BAM_STATS_SAMTOOLS:SAMTOOLS_FLAGSTAT
+Nov-01 12:59:01.060 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:BAM_STATS_MATURE:BAM_STATS_SAMTOOLS:SAMTOOLS_IDXSTATS
+Nov-01 12:59:01.070 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:BAM_STATS_HAIRPIN:SAMTOOLS_SORT
+Nov-01 12:59:01.071 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:BAM_STATS_HAIRPIN:SAMTOOLS_INDEX
+Nov-01 12:59:01.072 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:BAM_STATS_HAIRPIN:BAM_STATS_SAMTOOLS:SAMTOOLS_STATS
+Nov-01 12:59:01.072 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:BAM_STATS_HAIRPIN:BAM_STATS_SAMTOOLS:SAMTOOLS_FLAGSTAT
+Nov-01 12:59:01.073 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:BAM_STATS_HAIRPIN:BAM_STATS_SAMTOOLS:SAMTOOLS_IDXSTATS
+Nov-01 12:59:01.074 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:EDGER_QC
+Nov-01 12:59:01.075 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:SEQCLUSTER_SEQUENCES
+Nov-01 12:59:01.078 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:BOWTIE_MAP_SEQCLUSTER
+Nov-01 12:59:01.079 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:MIRTOP_QUANT
+Nov-01 12:59:01.079 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:TABLE_MERGE
+Nov-01 12:59:01.080 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > NFCORE_SMRNASEQ:SMRNASEQ:GENOME_QUANT:INDEX_GENOME
+Nov-01 12:59:01.085 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > NFCORE_SMRNASEQ:SMRNASEQ:GENOME_QUANT:BOWTIE_MAP_GENOME
+Nov-01 12:59:01.093 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > NFCORE_SMRNASEQ:SMRNASEQ:GENOME_QUANT:BAM_SORT_STATS_SAMTOOLS:SAMTOOLS_SORT
+Nov-01 12:59:01.094 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > NFCORE_SMRNASEQ:SMRNASEQ:GENOME_QUANT:BAM_SORT_STATS_SAMTOOLS:SAMTOOLS_INDEX
+Nov-01 12:59:01.099 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > NFCORE_SMRNASEQ:SMRNASEQ:GENOME_QUANT:BAM_SORT_STATS_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_STATS
+Nov-01 12:59:01.100 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > NFCORE_SMRNASEQ:SMRNASEQ:GENOME_QUANT:BAM_SORT_STATS_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_FLAGSTAT
+Nov-01 12:59:01.115 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > NFCORE_SMRNASEQ:SMRNASEQ:GENOME_QUANT:BAM_SORT_STATS_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_IDXSTATS
+Nov-01 12:59:01.118 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > NFCORE_SMRNASEQ:SMRNASEQ:MIRDEEP2:MIRDEEP2_PIGZ
+Nov-01 12:59:01.119 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > NFCORE_SMRNASEQ:SMRNASEQ:MIRDEEP2:MIRDEEP2_MAPPER
+Nov-01 12:59:01.120 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > NFCORE_SMRNASEQ:SMRNASEQ:MIRDEEP2:MIRDEEP2_RUN
+Nov-01 12:59:01.121 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > NFCORE_SMRNASEQ:SMRNASEQ:CUSTOM_DUMPSOFTWAREVERSIONS
+Nov-01 12:59:01.122 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > NFCORE_SMRNASEQ:SMRNASEQ:MULTIQC
+Nov-01 12:59:01.135 [main] DEBUG nextflow.script.ScriptRunner - Parsed script files:
+  Script_09147e8eac3f06f9: /home/musaqa/.nextflow/assets/nf-core/smrnaseq/./workflows/../modules/nf-core/custom/dumpsoftwareversions/main.nf
+  Script_c5047a12c1941783: /home/musaqa/.nextflow/assets/nf-core/smrnaseq/./workflows/../subworkflows/local/../../modules/local/mirdeep2_prepare.nf
+  Script_7f27385f02104478: /home/musaqa/.nextflow/assets/nf-core/smrnaseq/./workflows/../subworkflows/local/../../modules/local/bowtie_genome.nf
+  Script_735cca63e5248a4c: /home/musaqa/.nextflow/assets/nf-core/smrnaseq/./workflows/../subworkflows/local/../../modules/local/mirtop_quant.nf
+  Script_1c115fe97443c2e3: /home/musaqa/.nextflow/assets/nf-core/smrnaseq/./workflows/../subworkflows/local/../../modules/local/format_fasta_mirna.nf
+  Script_aa96f01df3a2dd0d: /home/musaqa/.nextflow/assets/nf-core/smrnaseq/./workflows/../subworkflows/local/input_check.nf
+  Script_cdbce3e23a8f89e8: /home/musaqa/.nextflow/assets/nf-core/smrnaseq/./workflows/../subworkflows/local/../nf-core/bam_sort_stats_samtools/../bam_stats_samtools/main.nf
+  Script_eb9d0450a65129bd: /home/musaqa/.nextflow/assets/nf-core/smrnaseq/./workflows/../modules/nf-core/multiqc/main.nf
+  Script_03e47f2ea1ad4bda: /home/musaqa/.nextflow/assets/nf-core/smrnaseq/./workflows/../subworkflows/local/../nf-core/bam_sort_stats_samtools/../bam_stats_samtools/../../../modules/nf-core/samtools/stats/main.nf
+  Script_58e794dbd977701f: /home/musaqa/.nextflow/assets/nf-core/smrnaseq/./workflows/../subworkflows/local/../nf-core/bam_sort_stats_samtools/../../../modules/nf-core/samtools/index/main.nf
+  Script_9e89f1fdf9ced4f0: /home/musaqa/.nextflow/assets/nf-core/smrnaseq/./workflows/../subworkflows/local/../nf-core/bam_sort_stats_samtools/../bam_stats_samtools/../../../modules/nf-core/samtools/idxstats/main.nf
+  Script_4371e034a973ab80: /home/musaqa/.nextflow/assets/nf-core/smrnaseq/./workflows/../subworkflows/local/../../modules/local/mirdeep2_run.nf
+  Script_a59b589f8fb4b0ad: /home/musaqa/.nextflow/assets/nf-core/smrnaseq/./workflows/../subworkflows/local/../../modules/local/seqcluster_collapse.nf
+  Script_cc36902f9ac7a96e: /home/musaqa/.nextflow/assets/nf-core/smrnaseq/./workflows/smrnaseq.nf
+  Script_0da6736069339370: /home/musaqa/.nextflow/assets/nf-core/smrnaseq/./workflows/../subworkflows/local/../../modules/nf-core/fastqc/main.nf
+  Script_1b4f6ff26b9af586: /home/musaqa/.nextflow/assets/nf-core/smrnaseq/main.nf
+  Script_43e8490fd958a369: /home/musaqa/.nextflow/assets/nf-core/smrnaseq/./workflows/../subworkflows/local/fastqc_fastp.nf
+  Script_2fa4b6601d9aa276: /home/musaqa/.nextflow/assets/nf-core/smrnaseq/./workflows/../subworkflows/local/../nf-core/bam_sort_stats_samtools/../bam_stats_samtools/../../../modules/nf-core/samtools/flagstat/main.nf
+  Script_7e8bd18dd59a0f0e: /home/musaqa/.nextflow/assets/nf-core/smrnaseq/./workflows/../subworkflows/local/../../modules/local/blat_mirna.nf
+  Script_4f6739ae1680d27b: /home/musaqa/.nextflow/assets/nf-core/smrnaseq/./workflows/../subworkflows/local/../nf-core/bam_sort_stats_samtools/main.nf
+  Script_5b0a358e7aecebdb: /home/musaqa/.nextflow/assets/nf-core/smrnaseq/./workflows/../subworkflows/local/../../modules/local/mirtrace.nf
+  Script_27ca802b6ebccc17: /home/musaqa/.nextflow/assets/nf-core/smrnaseq/./workflows/../subworkflows/local/mirna_quant.nf
+  Script_9d0d3a7cc0750a7f: /home/musaqa/.nextflow/assets/nf-core/smrnaseq/./workflows/../subworkflows/local/../../modules/local/bowtie_mirna.nf
+  Script_b4f91862a5a0b321: /home/musaqa/.nextflow/assets/nf-core/smrnaseq/./workflows/../subworkflows/local/../../modules/local/bowtie_map_mirna.nf
+  Script_739bb9c028e86963: /home/musaqa/.nextflow/assets/nf-core/smrnaseq/./workflows/../subworkflows/local/contaminant_filter.nf
+  Script_48a215f4e37c7f2d: /home/musaqa/.nextflow/assets/nf-core/smrnaseq/./workflows/../subworkflows/local/../../modules/local/filter_stats.nf
+  Script_36d4290842df373a: /home/musaqa/.nextflow/assets/nf-core/smrnaseq/./workflows/../subworkflows/local/../nf-core/bam_sort_stats_samtools/../../../modules/nf-core/samtools/sort/main.nf
+  Script_ee92193e093c17f9: /home/musaqa/.nextflow/assets/nf-core/smrnaseq/./workflows/../modules/nf-core/cat/fastq/main.nf
+  Script_68978502afde0a40: /home/musaqa/.nextflow/assets/nf-core/smrnaseq/./workflows/../subworkflows/local/mirtrace.nf
+  Script_f732abda719830a4: /home/musaqa/.nextflow/assets/nf-core/smrnaseq/./workflows/../subworkflows/local/../../modules/local/parse_fasta_mirna.nf
+  Script_ebb088850e33fa5c: /home/musaqa/.nextflow/assets/nf-core/smrnaseq/./workflows/../subworkflows/local/../../modules/local/datatable_merge.nf
+  Script_ef056d84a329a878: /home/musaqa/.nextflow/assets/nf-core/smrnaseq/./workflows/../subworkflows/local/../../modules/local/samplesheet_check.nf
+  Script_88c12c5bd233f569: /home/musaqa/.nextflow/assets/nf-core/smrnaseq/./workflows/../subworkflows/local/../../modules/local/bowtie_map_contaminants.nf
+  Script_83149f34540cf044: /home/musaqa/.nextflow/assets/nf-core/smrnaseq/./workflows/../subworkflows/local/../../modules/local/edger_qc.nf
+  Script_c4aaad95522aa155: /home/musaqa/.nextflow/assets/nf-core/smrnaseq/./workflows/../subworkflows/local/../../modules/local/bowtie_contaminants.nf
+  Script_8a07c7c6af6a884f: /home/musaqa/.nextflow/assets/nf-core/smrnaseq/./workflows/../subworkflows/local/../../modules/local/mirdeep2_mapper.nf
+  Script_e98ccc339d942698: /home/musaqa/.nextflow/assets/nf-core/smrnaseq/./workflows/../subworkflows/local/genome_quant.nf
+  Script_f8df35c50345a933: /home/musaqa/.nextflow/assets/nf-core/smrnaseq/./workflows/../subworkflows/local/mirdeep2.nf
+  Script_b16834c499741c31: /home/musaqa/.nextflow/assets/nf-core/smrnaseq/./workflows/../subworkflows/local/../../modules/nf-core/fastp/main.nf
+Nov-01 12:59:01.135 [main] DEBUG nextflow.script.ScriptRunner - > Awaiting termination 
+Nov-01 12:59:01.135 [main] DEBUG nextflow.Session - Session await
+Nov-01 12:59:01.250 [Actor Thread 259] DEBUG nextflow.util.CacheHelper - Hash asset file sha-256: /home/musaqa/.nextflow/assets/nf-core/smrnaseq/bin/check_samplesheet.py
+Nov-01 12:59:01.357 [Actor Thread 323] DEBUG nextflow.sort.BigSort - Sort completed -- entries: 1; slices: 1; internal sort time: 0.003 s; external sort time: 0.004 s; total time: 0.007 s
+Nov-01 12:59:01.357 [Actor Thread 323] DEBUG nextflow.file.FileCollector - >> temp file exists? false
+Nov-01 12:59:01.360 [Actor Thread 323] DEBUG nextflow.file.FileCollector - Missed collect-file cache -- cause: java.nio.file.NoSuchFileException: /home/musaqa/mina/work/collect-file/54997d6ca142034710744f180c7c578a
+Nov-01 12:59:01.375 [Actor Thread 323] DEBUG nextflow.file.FileCollector - Saved collect-files list to: /home/musaqa/mina/work/collect-file/54997d6ca142034710744f180c7c578a
+Nov-01 12:59:01.394 [Actor Thread 323] DEBUG nextflow.file.FileCollector - Deleting file collector temp dir: /tmp/nxf-367446856011746123
+Nov-01 12:59:01.417 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Nov-01 12:59:01.419 [Task submitter] INFO  nextflow.Session - [19/c9f265] Submitted process > NFCORE_SMRNASEQ:SMRNASEQ:CONTAMINANT_FILTER:INDEX_TRNA
+Nov-01 12:59:02.783 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 3; name: NFCORE_SMRNASEQ:SMRNASEQ:CONTAMINANT_FILTER:INDEX_TRNA; status: COMPLETED; exit: 0; error: -; workDir: /home/musaqa/mina/work/19/c9f26567d9f1deb33d3388fb1a85e7]
+Nov-01 12:59:02.789 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Nov-01 12:59:02.790 [Task submitter] INFO  nextflow.Session - [3c/94e6de] Submitted process > NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:PARSE_MATURE
+Nov-01 12:59:04.181 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 4; name: NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:PARSE_MATURE; status: COMPLETED; exit: 0; error: -; workDir: /home/musaqa/mina/work/3c/94e6dead6684223de060a75e0473bf]
+Nov-01 12:59:04.187 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Nov-01 12:59:04.187 [Task submitter] INFO  nextflow.Session - [f8/fd2903] Submitted process > NFCORE_SMRNASEQ:SMRNASEQ:CONTAMINANT_FILTER:INDEX_RRNA
+Nov-01 12:59:05.380 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 2; name: NFCORE_SMRNASEQ:SMRNASEQ:CONTAMINANT_FILTER:INDEX_RRNA; status: COMPLETED; exit: 0; error: -; workDir: /home/musaqa/mina/work/f8/fd29030ad74e4ba0723e2a8fbb8ac2]
+Nov-01 12:59:05.386 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Nov-01 12:59:05.387 [Task submitter] INFO  nextflow.Session - [d8/160bec] Submitted process > NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:PARSE_HAIRPIN
+Nov-01 12:59:06.638 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 5; name: NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:PARSE_HAIRPIN; status: COMPLETED; exit: 0; error: -; workDir: /home/musaqa/mina/work/d8/160bec415d62652a8bbe94f68d10d3]
+Nov-01 12:59:06.642 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Nov-01 12:59:06.643 [Task submitter] INFO  nextflow.Session - [32/4713a8] Submitted process > NFCORE_SMRNASEQ:SMRNASEQ:GENOME_QUANT:INDEX_GENOME (Drosophila_melanogaster.BDGP6.32.dna.toplevel.fa)
+Nov-01 13:01:15.486 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 6; name: NFCORE_SMRNASEQ:SMRNASEQ:GENOME_QUANT:INDEX_GENOME (Drosophila_melanogaster.BDGP6.32.dna.toplevel.fa); status: COMPLETED; exit: 0; error: -; workDir: /home/musaqa/mina/work/32/4713a8a1709397a424caa204f68276]
+Nov-01 13:01:15.490 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Nov-01 13:01:15.491 [Task submitter] INFO  nextflow.Session - [28/28ef64] Submitted process > NFCORE_SMRNASEQ:SMRNASEQ:INPUT_CHECK:SAMPLESHEET_CHECK (samplesheet.csv)
+Nov-01 13:01:18.176 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 1; name: NFCORE_SMRNASEQ:SMRNASEQ:INPUT_CHECK:SAMPLESHEET_CHECK (samplesheet.csv); status: COMPLETED; exit: 0; error: -; workDir: /home/musaqa/mina/work/28/28ef64dd32734d08967b7d766f7569]
+Nov-01 13:01:18.182 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Nov-01 13:01:18.182 [Task submitter] INFO  nextflow.Session - [f3/a005a6] Submitted process > NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:FORMAT_MATURE (mature.fa_igenome.fa)
+Nov-01 13:01:18.210 [Actor Thread 470] DEBUG nextflow.util.CacheHelper - Hash asset file sha-256: /home/musaqa/.nextflow/assets/nf-core/smrnaseq/assets/known_adapters.fa
+Nov-01 13:01:19.382 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 7; name: NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:FORMAT_MATURE (mature.fa_igenome.fa); status: COMPLETED; exit: 0; error: -; workDir: /home/musaqa/mina/work/f3/a005a6a427eb2ef84c1b1da13fe5a0]
+Nov-01 13:01:19.387 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Nov-01 13:01:19.388 [Task submitter] INFO  nextflow.Session - [34/d821c3] Submitted process > NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:FORMAT_HAIRPIN (hairpin.fa_igenome.fa)
+Nov-01 13:01:20.364 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 8; name: NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:FORMAT_HAIRPIN (hairpin.fa_igenome.fa); status: COMPLETED; exit: 0; error: -; workDir: /home/musaqa/mina/work/34/d821c365c1e0c25e0969cd18528800]
+Nov-01 13:01:20.368 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Nov-01 13:01:20.369 [Task submitter] INFO  nextflow.Session - [fa/5d9745] Submitted process > NFCORE_SMRNASEQ:SMRNASEQ:FASTQC_FASTP:FASTQC_RAW (CD_SPZ_REP1)
+Nov-01 13:02:07.009 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 10; name: NFCORE_SMRNASEQ:SMRNASEQ:FASTQC_FASTP:FASTQC_RAW (CD_SPZ_REP1); status: COMPLETED; exit: 0; error: -; workDir: /home/musaqa/mina/work/fa/5d97453343a2782cd8bb7037013a8e]
+Nov-01 13:02:07.015 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Nov-01 13:02:07.016 [Task submitter] INFO  nextflow.Session - [f9/8b58b0] Submitted process > NFCORE_SMRNASEQ:SMRNASEQ:FASTQC_FASTP:FASTP (CD_SPZ_REP2)
+Nov-01 13:02:39.575 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 11; name: NFCORE_SMRNASEQ:SMRNASEQ:FASTQC_FASTP:FASTP (CD_SPZ_REP2); status: COMPLETED; exit: 0; error: -; workDir: /home/musaqa/mina/work/f9/8b58b0a07bfc35b7ec1ce327e0fb8c]
+Nov-01 13:02:39.579 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Nov-01 13:02:39.580 [Task submitter] INFO  nextflow.Session - [1b/fc2242] Submitted process > NFCORE_SMRNASEQ:SMRNASEQ:FASTQC_FASTP:FASTP (CD_SPZ_REP1)
+Nov-01 13:02:39.704 [Task monitor] DEBUG nextflow.processor.TaskProcessor - Process NFCORE_SMRNASEQ:SMRNASEQ:FASTQC_FASTP:FASTP > Skipping output binding because one or more optional files are missing: fileoutparam<5:1>
+Nov-01 13:02:39.704 [Task monitor] DEBUG nextflow.processor.TaskProcessor - Process NFCORE_SMRNASEQ:SMRNASEQ:FASTQC_FASTP:FASTP > Skipping output binding because one or more optional files are missing: fileoutparam<6:1>
+Nov-01 13:03:11.799 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 9; name: NFCORE_SMRNASEQ:SMRNASEQ:FASTQC_FASTP:FASTP (CD_SPZ_REP1); status: COMPLETED; exit: 0; error: -; workDir: /home/musaqa/mina/work/1b/fc224232c9e85c81dd3f4b307bb38a]
+Nov-01 13:03:11.803 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Nov-01 13:03:11.804 [Task submitter] INFO  nextflow.Session - [28/53af42] Submitted process > NFCORE_SMRNASEQ:SMRNASEQ:FASTQC_FASTP:FASTP (CD_SPZ_REP3)
+Nov-01 13:03:11.813 [Task monitor] DEBUG nextflow.processor.TaskProcessor - Process NFCORE_SMRNASEQ:SMRNASEQ:FASTQC_FASTP:FASTP > Skipping output binding because one or more optional files are missing: fileoutparam<5:1>
+Nov-01 13:03:11.814 [Task monitor] DEBUG nextflow.processor.TaskProcessor - Process NFCORE_SMRNASEQ:SMRNASEQ:FASTQC_FASTP:FASTP > Skipping output binding because one or more optional files are missing: fileoutparam<6:1>
+Nov-01 13:03:44.343 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 12; name: NFCORE_SMRNASEQ:SMRNASEQ:FASTQC_FASTP:FASTP (CD_SPZ_REP3); status: COMPLETED; exit: 0; error: -; workDir: /home/musaqa/mina/work/28/53af42964e9a9ee07cb4e906a0aa05]
+Nov-01 13:03:44.347 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Nov-01 13:03:44.347 [Task submitter] INFO  nextflow.Session - [9f/bcc31c] Submitted process > NFCORE_SMRNASEQ:SMRNASEQ:FASTQC_FASTP:FASTQC_RAW (CD_SPZ_REP2)
+Nov-01 13:03:44.359 [Task monitor] DEBUG nextflow.processor.TaskProcessor - Process NFCORE_SMRNASEQ:SMRNASEQ:FASTQC_FASTP:FASTP > Skipping output binding because one or more optional files are missing: fileoutparam<5:1>
+Nov-01 13:03:44.359 [Task monitor] DEBUG nextflow.processor.TaskProcessor - Process NFCORE_SMRNASEQ:SMRNASEQ:FASTQC_FASTP:FASTP > Skipping output binding because one or more optional files are missing: fileoutparam<6:1>
+Nov-01 13:03:59.990 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 1 -- submitted tasks are shown below
+~> TaskHandler[id: 13; name: NFCORE_SMRNASEQ:SMRNASEQ:FASTQC_FASTP:FASTQC_RAW (CD_SPZ_REP2); status: RUNNING; exit: -; error: -; workDir: /home/musaqa/mina/work/9f/bcc31ccd6da5e781884fde9e383c22]
+Nov-01 13:04:02.359 [Task submitter] DEBUG n.processor.TaskPollingMonitor - %% executor local > tasks in the submission queue: 30 -- tasks to be submitted are shown below
+~> TaskHandler[id: 17; name: NFCORE_SMRNASEQ:SMRNASEQ:FASTQC_FASTP:FASTQC_RAW (CD_ZAJ_REP1); status: NEW; exit: -; error: -; workDir: /home/musaqa/mina/work/5f/84f6249d8957e9855ea1f9b80bac45]
+~> TaskHandler[id: 14; name: NFCORE_SMRNASEQ:SMRNASEQ:FASTQC_FASTP:FASTP (CD_ZAJ_REP1); status: NEW; exit: -; error: -; workDir: /home/musaqa/mina/work/90/523b23816d6675a2a7b7e6e192c21b]
+~> TaskHandler[id: 16; name: NFCORE_SMRNASEQ:SMRNASEQ:FASTQC_FASTP:FASTP (CD_ZAJ_REP2); status: NEW; exit: -; error: -; workDir: /home/musaqa/mina/work/7f/bf8174eecdf0b55456d052978374b6]
+~> TaskHandler[id: 15; name: NFCORE_SMRNASEQ:SMRNASEQ:FASTQC_FASTP:FASTQC_RAW (CD_SPZ_REP3); status: NEW; exit: -; error: -; workDir: /home/musaqa/mina/work/58/5237717fe0a36e6db58a8939cd7f96]
+~> TaskHandler[id: 19; name: NFCORE_SMRNASEQ:SMRNASEQ:FASTQC_FASTP:FASTQC_RAW (CD_ZAJ_REP2); status: NEW; exit: -; error: -; workDir: /home/musaqa/mina/work/ca/285e548f9bcdf9e66ee406fa979f59]
+~> TaskHandler[id: 20; name: NFCORE_SMRNASEQ:SMRNASEQ:FASTQC_FASTP:FASTP (ST_SPZ_REP1); status: NEW; exit: -; error: -; workDir: /home/musaqa/mina/work/b6/43e1e7250009b0880fff436704b634]
+~> TaskHandler[id: 18; name: NFCORE_SMRNASEQ:SMRNASEQ:FASTQC_FASTP:FASTP (CD_ZAJ_REP3); status: NEW; exit: -; error: -; workDir: /home/musaqa/mina/work/80/770f12fce5df455d7b93fe979d3b37]
+~> TaskHandler[id: 21; name: NFCORE_SMRNASEQ:SMRNASEQ:FASTQC_FASTP:FASTQC_RAW (CD_ZAJ_REP3); status: NEW; exit: -; error: -; workDir: /home/musaqa/mina/work/ea/1457dab977539330f3cfda8549810a]
+~> TaskHandler[id: 22; name: NFCORE_SMRNASEQ:SMRNASEQ:FASTQC_FASTP:FASTP (ST_SPZ_REP2); status: NEW; exit: -; error: -; workDir: /home/musaqa/mina/work/66/853b82846c8be628bcfd4055ece6f9]
+~> TaskHandler[id: 25; name: NFCORE_SMRNASEQ:SMRNASEQ:FASTQC_FASTP:FASTQC_RAW (ST_SPZ_REP1); status: NEW; exit: -; error: -; workDir: /home/musaqa/mina/work/9e/3da0f21a04111b48d4ab3a8298b383]
+.. remaining tasks omitted.
+Nov-01 13:04:34.902 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 13; name: NFCORE_SMRNASEQ:SMRNASEQ:FASTQC_FASTP:FASTQC_RAW (CD_SPZ_REP2); status: COMPLETED; exit: 0; error: -; workDir: /home/musaqa/mina/work/9f/bcc31ccd6da5e781884fde9e383c22]
+Nov-01 13:04:34.908 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Nov-01 13:04:34.909 [Task submitter] INFO  nextflow.Session - [5f/84f624] Submitted process > NFCORE_SMRNASEQ:SMRNASEQ:FASTQC_FASTP:FASTQC_RAW (CD_ZAJ_REP1)
+Nov-01 13:05:07.516 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 17; name: NFCORE_SMRNASEQ:SMRNASEQ:FASTQC_FASTP:FASTQC_RAW (CD_ZAJ_REP1); status: COMPLETED; exit: 0; error: -; workDir: /home/musaqa/mina/work/5f/84f6249d8957e9855ea1f9b80bac45]
+Nov-01 13:05:07.521 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Nov-01 13:05:07.521 [Task submitter] INFO  nextflow.Session - [90/523b23] Submitted process > NFCORE_SMRNASEQ:SMRNASEQ:FASTQC_FASTP:FASTP (CD_ZAJ_REP1)
+Nov-01 13:05:28.935 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 14; name: NFCORE_SMRNASEQ:SMRNASEQ:FASTQC_FASTP:FASTP (CD_ZAJ_REP1); status: COMPLETED; exit: 0; error: -; workDir: /home/musaqa/mina/work/90/523b23816d6675a2a7b7e6e192c21b]
+Nov-01 13:05:28.941 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Nov-01 13:05:28.941 [Task submitter] INFO  nextflow.Session - [7f/bf8174] Submitted process > NFCORE_SMRNASEQ:SMRNASEQ:FASTQC_FASTP:FASTP (CD_ZAJ_REP2)
+Nov-01 13:05:28.951 [Task monitor] DEBUG nextflow.processor.TaskProcessor - Process NFCORE_SMRNASEQ:SMRNASEQ:FASTQC_FASTP:FASTP > Skipping output binding because one or more optional files are missing: fileoutparam<5:1>
+Nov-01 13:05:28.952 [Task monitor] DEBUG nextflow.processor.TaskProcessor - Process NFCORE_SMRNASEQ:SMRNASEQ:FASTQC_FASTP:FASTP > Skipping output binding because one or more optional files are missing: fileoutparam<6:1>
+Nov-01 13:06:01.885 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 16; name: NFCORE_SMRNASEQ:SMRNASEQ:FASTQC_FASTP:FASTP (CD_ZAJ_REP2); status: COMPLETED; exit: 0; error: -; workDir: /home/musaqa/mina/work/7f/bf8174eecdf0b55456d052978374b6]
+Nov-01 13:06:01.890 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Nov-01 13:06:01.890 [Task submitter] INFO  nextflow.Session - [58/523771] Submitted process > NFCORE_SMRNASEQ:SMRNASEQ:FASTQC_FASTP:FASTQC_RAW (CD_SPZ_REP3)
+Nov-01 13:06:01.901 [Task monitor] DEBUG nextflow.processor.TaskProcessor - Process NFCORE_SMRNASEQ:SMRNASEQ:FASTQC_FASTP:FASTP > Skipping output binding because one or more optional files are missing: fileoutparam<5:1>
+Nov-01 13:06:01.901 [Task monitor] DEBUG nextflow.processor.TaskProcessor - Process NFCORE_SMRNASEQ:SMRNASEQ:FASTQC_FASTP:FASTP > Skipping output binding because one or more optional files are missing: fileoutparam<6:1>
+Nov-01 13:06:54.334 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 15; name: NFCORE_SMRNASEQ:SMRNASEQ:FASTQC_FASTP:FASTQC_RAW (CD_SPZ_REP3); status: COMPLETED; exit: 0; error: -; workDir: /home/musaqa/mina/work/58/5237717fe0a36e6db58a8939cd7f96]
+Nov-01 13:06:54.339 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Nov-01 13:06:54.339 [Task submitter] INFO  nextflow.Session - [ca/285e54] Submitted process > NFCORE_SMRNASEQ:SMRNASEQ:FASTQC_FASTP:FASTQC_RAW (CD_ZAJ_REP2)
+Nov-01 13:07:55.169 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 19; name: NFCORE_SMRNASEQ:SMRNASEQ:FASTQC_FASTP:FASTQC_RAW (CD_ZAJ_REP2); status: COMPLETED; exit: 0; error: -; workDir: /home/musaqa/mina/work/ca/285e548f9bcdf9e66ee406fa979f59]
+Nov-01 13:07:55.173 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Nov-01 13:07:55.174 [Task submitter] INFO  nextflow.Session - [b6/43e1e7] Submitted process > NFCORE_SMRNASEQ:SMRNASEQ:FASTQC_FASTP:FASTP (ST_SPZ_REP1)
+Nov-01 13:08:30.946 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 20; name: NFCORE_SMRNASEQ:SMRNASEQ:FASTQC_FASTP:FASTP (ST_SPZ_REP1); status: COMPLETED; exit: 0; error: -; workDir: /home/musaqa/mina/work/b6/43e1e7250009b0880fff436704b634]
+Nov-01 13:08:30.950 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Nov-01 13:08:30.950 [Task submitter] INFO  nextflow.Session - [80/770f12] Submitted process > NFCORE_SMRNASEQ:SMRNASEQ:FASTQC_FASTP:FASTP (CD_ZAJ_REP3)
+Nov-01 13:08:30.962 [Task monitor] DEBUG nextflow.processor.TaskProcessor - Process NFCORE_SMRNASEQ:SMRNASEQ:FASTQC_FASTP:FASTP > Skipping output binding because one or more optional files are missing: fileoutparam<5:1>
+Nov-01 13:08:30.962 [Task monitor] DEBUG nextflow.processor.TaskProcessor - Process NFCORE_SMRNASEQ:SMRNASEQ:FASTQC_FASTP:FASTP > Skipping output binding because one or more optional files are missing: fileoutparam<6:1>
+Nov-01 13:09:00.017 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 1 -- submitted tasks are shown below
+~> TaskHandler[id: 18; name: NFCORE_SMRNASEQ:SMRNASEQ:FASTQC_FASTP:FASTP (CD_ZAJ_REP3); status: RUNNING; exit: -; error: -; workDir: /home/musaqa/mina/work/80/770f12fce5df455d7b93fe979d3b37]
+Nov-01 13:09:02.620 [Task submitter] DEBUG n.processor.TaskPollingMonitor - %% executor local > tasks in the submission queue: 32 -- tasks to be submitted are shown below
+~> TaskHandler[id: 21; name: NFCORE_SMRNASEQ:SMRNASEQ:FASTQC_FASTP:FASTQC_RAW (CD_ZAJ_REP3); status: NEW; exit: -; error: -; workDir: /home/musaqa/mina/work/ea/1457dab977539330f3cfda8549810a]
+~> TaskHandler[id: 22; name: NFCORE_SMRNASEQ:SMRNASEQ:FASTQC_FASTP:FASTP (ST_SPZ_REP2); status: NEW; exit: -; error: -; workDir: /home/musaqa/mina/work/66/853b82846c8be628bcfd4055ece6f9]
+~> TaskHandler[id: 25; name: NFCORE_SMRNASEQ:SMRNASEQ:FASTQC_FASTP:FASTQC_RAW (ST_SPZ_REP1); status: NEW; exit: -; error: -; workDir: /home/musaqa/mina/work/9e/3da0f21a04111b48d4ab3a8298b383]
+~> TaskHandler[id: 24; name: NFCORE_SMRNASEQ:SMRNASEQ:FASTQC_FASTP:FASTP (ST_ZAJ_REP1); status: NEW; exit: -; error: -; workDir: /home/musaqa/mina/work/ad/164215c6b21f0a39a7c49da0063cc7]
+~> TaskHandler[id: 23; name: NFCORE_SMRNASEQ:SMRNASEQ:FASTQC_FASTP:FASTP (ST_SPZ_REP3); status: NEW; exit: -; error: -; workDir: /home/musaqa/mina/work/08/2dc8c5991f77f911a99763835f576f]
+~> TaskHandler[id: 26; name: NFCORE_SMRNASEQ:SMRNASEQ:FASTQC_FASTP:FASTP (ST_ZAJ_REP2); status: NEW; exit: -; error: -; workDir: /home/musaqa/mina/work/8f/0c2f84d3cddfbbd42b1c71cca96404]
+~> TaskHandler[id: 28; name: NFCORE_SMRNASEQ:SMRNASEQ:FASTQC_FASTP:FASTP (ST_ZAJ_REP3); status: NEW; exit: -; error: -; workDir: /home/musaqa/mina/work/fb/bf1576f6941888608d8239a91dc089]
+~> TaskHandler[id: 29; name: NFCORE_SMRNASEQ:SMRNASEQ:FASTQC_FASTP:FASTQC_RAW (ST_SPZ_REP3); status: NEW; exit: -; error: -; workDir: /home/musaqa/mina/work/57/9cfc326961acea8cc81136da4b2f1c]
+~> TaskHandler[id: 27; name: NFCORE_SMRNASEQ:SMRNASEQ:FASTQC_FASTP:FASTQC_RAW (ST_SPZ_REP2); status: NEW; exit: -; error: -; workDir: /home/musaqa/mina/work/1d/afc01f5030b48759114d813de3849e]
+~> TaskHandler[id: 30; name: NFCORE_SMRNASEQ:SMRNASEQ:FASTQC_FASTP:FASTQC_RAW (ST_ZAJ_REP1); status: NEW; exit: -; error: -; workDir: /home/musaqa/mina/work/4d/d3bd63add3daeb2a09a166043d7062]
+.. remaining tasks omitted.
+Nov-01 13:09:16.852 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 18; name: NFCORE_SMRNASEQ:SMRNASEQ:FASTQC_FASTP:FASTP (CD_ZAJ_REP3); status: COMPLETED; exit: 0; error: -; workDir: /home/musaqa/mina/work/80/770f12fce5df455d7b93fe979d3b37]
+Nov-01 13:09:16.856 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Nov-01 13:09:16.857 [Task submitter] INFO  nextflow.Session - [ea/1457da] Submitted process > NFCORE_SMRNASEQ:SMRNASEQ:FASTQC_FASTP:FASTQC_RAW (CD_ZAJ_REP3)
+Nov-01 13:09:16.868 [Task monitor] DEBUG nextflow.processor.TaskProcessor - Process NFCORE_SMRNASEQ:SMRNASEQ:FASTQC_FASTP:FASTP > Skipping output binding because one or more optional files are missing: fileoutparam<5:1>
+Nov-01 13:09:16.869 [Task monitor] DEBUG nextflow.processor.TaskProcessor - Process NFCORE_SMRNASEQ:SMRNASEQ:FASTQC_FASTP:FASTP > Skipping output binding because one or more optional files are missing: fileoutparam<6:1>
+Nov-01 13:10:16.502 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 21; name: NFCORE_SMRNASEQ:SMRNASEQ:FASTQC_FASTP:FASTQC_RAW (CD_ZAJ_REP3); status: COMPLETED; exit: 0; error: -; workDir: /home/musaqa/mina/work/ea/1457dab977539330f3cfda8549810a]
+Nov-01 13:10:16.507 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Nov-01 13:10:16.507 [Task submitter] INFO  nextflow.Session - [66/853b82] Submitted process > NFCORE_SMRNASEQ:SMRNASEQ:FASTQC_FASTP:FASTP (ST_SPZ_REP2)
+Nov-01 13:10:54.455 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 22; name: NFCORE_SMRNASEQ:SMRNASEQ:FASTQC_FASTP:FASTP (ST_SPZ_REP2); status: COMPLETED; exit: 0; error: -; workDir: /home/musaqa/mina/work/66/853b82846c8be628bcfd4055ece6f9]
+Nov-01 13:10:54.461 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Nov-01 13:10:54.462 [Task submitter] INFO  nextflow.Session - [9e/3da0f2] Submitted process > NFCORE_SMRNASEQ:SMRNASEQ:FASTQC_FASTP:FASTQC_RAW (ST_SPZ_REP1)
+Nov-01 13:10:54.475 [Task monitor] DEBUG nextflow.processor.TaskProcessor - Process NFCORE_SMRNASEQ:SMRNASEQ:FASTQC_FASTP:FASTP > Skipping output binding because one or more optional files are missing: fileoutparam<5:1>
+Nov-01 13:10:54.475 [Task monitor] DEBUG nextflow.processor.TaskProcessor - Process NFCORE_SMRNASEQ:SMRNASEQ:FASTQC_FASTP:FASTP > Skipping output binding because one or more optional files are missing: fileoutparam<6:1>
+Nov-01 13:12:32.500 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 25; name: NFCORE_SMRNASEQ:SMRNASEQ:FASTQC_FASTP:FASTQC_RAW (ST_SPZ_REP1); status: COMPLETED; exit: 0; error: -; workDir: /home/musaqa/mina/work/9e/3da0f21a04111b48d4ab3a8298b383]
+Nov-01 13:12:32.503 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Nov-01 13:12:32.503 [Task submitter] INFO  nextflow.Session - [ad/164215] Submitted process > NFCORE_SMRNASEQ:SMRNASEQ:FASTQC_FASTP:FASTP (ST_ZAJ_REP1)
+Nov-01 13:13:29.621 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 24; name: NFCORE_SMRNASEQ:SMRNASEQ:FASTQC_FASTP:FASTP (ST_ZAJ_REP1); status: COMPLETED; exit: 0; error: -; workDir: /home/musaqa/mina/work/ad/164215c6b21f0a39a7c49da0063cc7]
+Nov-01 13:13:29.626 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Nov-01 13:13:29.627 [Task submitter] INFO  nextflow.Session - [08/2dc8c5] Submitted process > NFCORE_SMRNASEQ:SMRNASEQ:FASTQC_FASTP:FASTP (ST_SPZ_REP3)
+Nov-01 13:13:29.636 [Task monitor] DEBUG nextflow.processor.TaskProcessor - Process NFCORE_SMRNASEQ:SMRNASEQ:FASTQC_FASTP:FASTP > Skipping output binding because one or more optional files are missing: fileoutparam<5:1>
+Nov-01 13:13:29.637 [Task monitor] DEBUG nextflow.processor.TaskProcessor - Process NFCORE_SMRNASEQ:SMRNASEQ:FASTQC_FASTP:FASTP > Skipping output binding because one or more optional files are missing: fileoutparam<6:1>
+Nov-01 13:14:00.107 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 1 -- submitted tasks are shown below
+~> TaskHandler[id: 23; name: NFCORE_SMRNASEQ:SMRNASEQ:FASTQC_FASTP:FASTP (ST_SPZ_REP3); status: RUNNING; exit: -; error: -; workDir: /home/musaqa/mina/work/08/2dc8c5991f77f911a99763835f576f]
+Nov-01 13:14:03.541 [Task submitter] DEBUG n.processor.TaskPollingMonitor - %% executor local > tasks in the submission queue: 36 -- tasks to be submitted are shown below
+~> TaskHandler[id: 26; name: NFCORE_SMRNASEQ:SMRNASEQ:FASTQC_FASTP:FASTP (ST_ZAJ_REP2); status: NEW; exit: -; error: -; workDir: /home/musaqa/mina/work/8f/0c2f84d3cddfbbd42b1c71cca96404]
+~> TaskHandler[id: 28; name: NFCORE_SMRNASEQ:SMRNASEQ:FASTQC_FASTP:FASTP (ST_ZAJ_REP3); status: NEW; exit: -; error: -; workDir: /home/musaqa/mina/work/fb/bf1576f6941888608d8239a91dc089]
+~> TaskHandler[id: 29; name: NFCORE_SMRNASEQ:SMRNASEQ:FASTQC_FASTP:FASTQC_RAW (ST_SPZ_REP3); status: NEW; exit: -; error: -; workDir: /home/musaqa/mina/work/57/9cfc326961acea8cc81136da4b2f1c]
+~> TaskHandler[id: 27; name: NFCORE_SMRNASEQ:SMRNASEQ:FASTQC_FASTP:FASTQC_RAW (ST_SPZ_REP2); status: NEW; exit: -; error: -; workDir: /home/musaqa/mina/work/1d/afc01f5030b48759114d813de3849e]
+~> TaskHandler[id: 30; name: NFCORE_SMRNASEQ:SMRNASEQ:FASTQC_FASTP:FASTQC_RAW (ST_ZAJ_REP1); status: NEW; exit: -; error: -; workDir: /home/musaqa/mina/work/4d/d3bd63add3daeb2a09a166043d7062]
+~> TaskHandler[id: 31; name: NFCORE_SMRNASEQ:SMRNASEQ:FASTQC_FASTP:FASTQC_RAW (ST_ZAJ_REP2); status: NEW; exit: -; error: -; workDir: /home/musaqa/mina/work/47/4813782aebcc43c27085a98e519230]
+~> TaskHandler[id: 32; name: NFCORE_SMRNASEQ:SMRNASEQ:FASTQC_FASTP:FASTQC_RAW (ST_ZAJ_REP3); status: NEW; exit: -; error: -; workDir: /home/musaqa/mina/work/e1/4cc5e910a8e59400ea0ecf930b5b50]
+~> TaskHandler[id: 33; name: NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:INDEX_MATURE; status: NEW; exit: -; error: -; workDir: /home/musaqa/mina/work/c8/7e7f4f09e28f2b97cf6a4ee35a6fb8]
+~> TaskHandler[id: 34; name: NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:INDEX_HAIRPIN; status: NEW; exit: -; error: -; workDir: /home/musaqa/mina/work/5e/a33a7fe92c341175a5854deaba9a46]
+~> TaskHandler[id: 36; name: NFCORE_SMRNASEQ:SMRNASEQ:MIRDEEP2:MIRDEEP2_PIGZ (CD_SPZ_REP2); status: NEW; exit: -; error: -; workDir: /home/musaqa/mina/work/ca/ca40a1c373b4796de9dbe12ced71d5]
+.. remaining tasks omitted.
+Nov-01 13:14:11.679 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 23; name: NFCORE_SMRNASEQ:SMRNASEQ:FASTQC_FASTP:FASTP (ST_SPZ_REP3); status: COMPLETED; exit: 0; error: -; workDir: /home/musaqa/mina/work/08/2dc8c5991f77f911a99763835f576f]
+Nov-01 13:14:11.684 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Nov-01 13:14:11.684 [Task submitter] INFO  nextflow.Session - [8f/0c2f84] Submitted process > NFCORE_SMRNASEQ:SMRNASEQ:FASTQC_FASTP:FASTP (ST_ZAJ_REP2)
+Nov-01 13:14:11.696 [Task monitor] DEBUG nextflow.processor.TaskProcessor - Process NFCORE_SMRNASEQ:SMRNASEQ:FASTQC_FASTP:FASTP > Skipping output binding because one or more optional files are missing: fileoutparam<5:1>
+Nov-01 13:14:11.696 [Task monitor] DEBUG nextflow.processor.TaskProcessor - Process NFCORE_SMRNASEQ:SMRNASEQ:FASTQC_FASTP:FASTP > Skipping output binding because one or more optional files are missing: fileoutparam<6:1>
+Nov-01 13:15:20.596 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 26; name: NFCORE_SMRNASEQ:SMRNASEQ:FASTQC_FASTP:FASTP (ST_ZAJ_REP2); status: COMPLETED; exit: 0; error: -; workDir: /home/musaqa/mina/work/8f/0c2f84d3cddfbbd42b1c71cca96404]
+Nov-01 13:15:20.600 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Nov-01 13:15:20.600 [Task submitter] INFO  nextflow.Session - [fb/bf1576] Submitted process > NFCORE_SMRNASEQ:SMRNASEQ:FASTQC_FASTP:FASTP (ST_ZAJ_REP3)
+Nov-01 13:15:20.611 [Task monitor] DEBUG nextflow.processor.TaskProcessor - Process NFCORE_SMRNASEQ:SMRNASEQ:FASTQC_FASTP:FASTP > Skipping output binding because one or more optional files are missing: fileoutparam<5:1>
+Nov-01 13:15:20.611 [Task monitor] DEBUG nextflow.processor.TaskProcessor - Process NFCORE_SMRNASEQ:SMRNASEQ:FASTQC_FASTP:FASTP > Skipping output binding because one or more optional files are missing: fileoutparam<6:1>
+Nov-01 13:15:51.376 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 28; name: NFCORE_SMRNASEQ:SMRNASEQ:FASTQC_FASTP:FASTP (ST_ZAJ_REP3); status: COMPLETED; exit: 0; error: -; workDir: /home/musaqa/mina/work/fb/bf1576f6941888608d8239a91dc089]
+Nov-01 13:15:51.380 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Nov-01 13:15:51.380 [Task submitter] INFO  nextflow.Session - [57/9cfc32] Submitted process > NFCORE_SMRNASEQ:SMRNASEQ:FASTQC_FASTP:FASTQC_RAW (ST_SPZ_REP3)
+Nov-01 13:15:51.388 [Task monitor] DEBUG nextflow.processor.TaskProcessor - Process NFCORE_SMRNASEQ:SMRNASEQ:FASTQC_FASTP:FASTP > Skipping output binding because one or more optional files are missing: fileoutparam<5:1>
+Nov-01 13:15:51.388 [Task monitor] DEBUG nextflow.processor.TaskProcessor - Process NFCORE_SMRNASEQ:SMRNASEQ:FASTQC_FASTP:FASTP > Skipping output binding because one or more optional files are missing: fileoutparam<6:1>
+Nov-01 13:17:33.138 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 29; name: NFCORE_SMRNASEQ:SMRNASEQ:FASTQC_FASTP:FASTQC_RAW (ST_SPZ_REP3); status: COMPLETED; exit: 0; error: -; workDir: /home/musaqa/mina/work/57/9cfc326961acea8cc81136da4b2f1c]
+Nov-01 13:17:33.141 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Nov-01 13:17:33.142 [Task submitter] INFO  nextflow.Session - [1d/afc01f] Submitted process > NFCORE_SMRNASEQ:SMRNASEQ:FASTQC_FASTP:FASTQC_RAW (ST_SPZ_REP2)
+Nov-01 13:18:31.973 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 27; name: NFCORE_SMRNASEQ:SMRNASEQ:FASTQC_FASTP:FASTQC_RAW (ST_SPZ_REP2); status: COMPLETED; exit: 0; error: -; workDir: /home/musaqa/mina/work/1d/afc01f5030b48759114d813de3849e]
+Nov-01 13:18:31.979 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Nov-01 13:18:31.979 [Task submitter] INFO  nextflow.Session - [4d/d3bd63] Submitted process > NFCORE_SMRNASEQ:SMRNASEQ:FASTQC_FASTP:FASTQC_RAW (ST_ZAJ_REP1)
+Nov-01 13:19:00.153 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 1 -- submitted tasks are shown below
+~> TaskHandler[id: 30; name: NFCORE_SMRNASEQ:SMRNASEQ:FASTQC_FASTP:FASTQC_RAW (ST_ZAJ_REP1); status: RUNNING; exit: -; error: -; workDir: /home/musaqa/mina/work/4d/d3bd63add3daeb2a09a166043d7062]
+Nov-01 13:19:03.994 [Task submitter] DEBUG n.processor.TaskPollingMonitor - %% executor local > tasks in the submission queue: 41 -- tasks to be submitted are shown below
+~> TaskHandler[id: 31; name: NFCORE_SMRNASEQ:SMRNASEQ:FASTQC_FASTP:FASTQC_RAW (ST_ZAJ_REP2); status: NEW; exit: -; error: -; workDir: /home/musaqa/mina/work/47/4813782aebcc43c27085a98e519230]
+~> TaskHandler[id: 32; name: NFCORE_SMRNASEQ:SMRNASEQ:FASTQC_FASTP:FASTQC_RAW (ST_ZAJ_REP3); status: NEW; exit: -; error: -; workDir: /home/musaqa/mina/work/e1/4cc5e910a8e59400ea0ecf930b5b50]
+~> TaskHandler[id: 33; name: NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:INDEX_MATURE; status: NEW; exit: -; error: -; workDir: /home/musaqa/mina/work/c8/7e7f4f09e28f2b97cf6a4ee35a6fb8]
+~> TaskHandler[id: 34; name: NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:INDEX_HAIRPIN; status: NEW; exit: -; error: -; workDir: /home/musaqa/mina/work/5e/a33a7fe92c341175a5854deaba9a46]
+~> TaskHandler[id: 36; name: NFCORE_SMRNASEQ:SMRNASEQ:MIRDEEP2:MIRDEEP2_PIGZ (CD_SPZ_REP2); status: NEW; exit: -; error: -; workDir: /home/musaqa/mina/work/ca/ca40a1c373b4796de9dbe12ced71d5]
+~> TaskHandler[id: 35; name: NFCORE_SMRNASEQ:SMRNASEQ:CONTAMINANT_FILTER:MAP_RRNA (1); status: NEW; exit: -; error: -; workDir: /home/musaqa/mina/work/a1/50c4f2840f6790b2959f6ee34e8942]
+~> TaskHandler[id: 37; name: NFCORE_SMRNASEQ:SMRNASEQ:FASTQC_FASTP:FASTQC_TRIM (CD_SPZ_REP2); status: NEW; exit: -; error: -; workDir: /home/musaqa/mina/work/2f/3080ea0936930f443ae5e6ec4e4bb3]
+~> TaskHandler[id: 38; name: NFCORE_SMRNASEQ:SMRNASEQ:MIRDEEP2:MIRDEEP2_PIGZ (CD_SPZ_REP1); status: NEW; exit: -; error: -; workDir: /home/musaqa/mina/work/a5/bafe1a5e0ec5284ddff9f0e2082236]
+~> TaskHandler[id: 40; name: NFCORE_SMRNASEQ:SMRNASEQ:CONTAMINANT_FILTER:MAP_RRNA (2); status: NEW; exit: -; error: -; workDir: /home/musaqa/mina/work/f3/e8d11b63c1a7982a9766776a6a4e72]
+~> TaskHandler[id: 39; name: NFCORE_SMRNASEQ:SMRNASEQ:FASTQC_FASTP:FASTQC_TRIM (CD_SPZ_REP1); status: NEW; exit: -; error: -; workDir: /home/musaqa/mina/work/e1/712ac239cf2096c3740aa4a77279ea]
+.. remaining tasks omitted.
+Nov-01 13:20:07.637 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 30; name: NFCORE_SMRNASEQ:SMRNASEQ:FASTQC_FASTP:FASTQC_RAW (ST_ZAJ_REP1); status: COMPLETED; exit: 0; error: -; workDir: /home/musaqa/mina/work/4d/d3bd63add3daeb2a09a166043d7062]
+Nov-01 13:20:07.641 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Nov-01 13:20:07.641 [Task submitter] INFO  nextflow.Session - [47/481378] Submitted process > NFCORE_SMRNASEQ:SMRNASEQ:FASTQC_FASTP:FASTQC_RAW (ST_ZAJ_REP2)
+Nov-01 13:21:02.217 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 31; name: NFCORE_SMRNASEQ:SMRNASEQ:FASTQC_FASTP:FASTQC_RAW (ST_ZAJ_REP2); status: COMPLETED; exit: 0; error: -; workDir: /home/musaqa/mina/work/47/4813782aebcc43c27085a98e519230]
+Nov-01 13:21:02.221 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Nov-01 13:21:02.222 [Task submitter] INFO  nextflow.Session - [e1/4cc5e9] Submitted process > NFCORE_SMRNASEQ:SMRNASEQ:FASTQC_FASTP:FASTQC_RAW (ST_ZAJ_REP3)
+Nov-01 13:22:04.584 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 32; name: NFCORE_SMRNASEQ:SMRNASEQ:FASTQC_FASTP:FASTQC_RAW (ST_ZAJ_REP3); status: COMPLETED; exit: 0; error: -; workDir: /home/musaqa/mina/work/e1/4cc5e910a8e59400ea0ecf930b5b50]
+Nov-01 13:22:04.589 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Nov-01 13:22:04.589 [Task submitter] INFO  nextflow.Session - [c8/7e7f4f] Submitted process > NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:INDEX_MATURE
+Nov-01 13:22:06.429 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 33; name: NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:INDEX_MATURE; status: COMPLETED; exit: 0; error: -; workDir: /home/musaqa/mina/work/c8/7e7f4f09e28f2b97cf6a4ee35a6fb8]
+Nov-01 13:22:06.434 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Nov-01 13:22:06.434 [Task submitter] INFO  nextflow.Session - [5e/a33a7f] Submitted process > NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:INDEX_HAIRPIN
+Nov-01 13:22:07.853 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 34; name: NFCORE_SMRNASEQ:SMRNASEQ:MIRNA_QUANT:INDEX_HAIRPIN; status: COMPLETED; exit: 0; error: -; workDir: /home/musaqa/mina/work/5e/a33a7fe92c341175a5854deaba9a46]
+Nov-01 13:22:07.857 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Nov-01 13:22:07.858 [Task submitter] INFO  nextflow.Session - [ca/ca40a1] Submitted process > NFCORE_SMRNASEQ:SMRNASEQ:MIRDEEP2:MIRDEEP2_PIGZ (CD_SPZ_REP2)
+Nov-01 13:22:45.110 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 36; name: NFCORE_SMRNASEQ:SMRNASEQ:MIRDEEP2:MIRDEEP2_PIGZ (CD_SPZ_REP2); status: COMPLETED; exit: 0; error: -; workDir: /home/musaqa/mina/work/ca/ca40a1c373b4796de9dbe12ced71d5]
+Nov-01 13:22:45.116 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Nov-01 13:22:45.117 [Task submitter] INFO  nextflow.Session - [a1/50c4f2] Submitted process > NFCORE_SMRNASEQ:SMRNASEQ:CONTAMINANT_FILTER:MAP_RRNA (1)
+Nov-01 13:22:50.391 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 35; name: NFCORE_SMRNASEQ:SMRNASEQ:CONTAMINANT_FILTER:MAP_RRNA (1); status: COMPLETED; exit: 255; error: -; workDir: /home/musaqa/mina/work/a1/50c4f2840f6790b2959f6ee34e8942]
+Nov-01 13:22:50.396 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Nov-01 13:22:50.397 [Task submitter] INFO  nextflow.Session - [2f/3080ea] Submitted process > NFCORE_SMRNASEQ:SMRNASEQ:FASTQC_FASTP:FASTQC_TRIM (CD_SPZ_REP2)
+Nov-01 13:22:50.549 [Task monitor] DEBUG nextflow.processor.TaskProcessor - Handling unexpected condition for
+  task: name=NFCORE_SMRNASEQ:SMRNASEQ:CONTAMINANT_FILTER:MAP_RRNA (1); work-dir=/home/musaqa/mina/work/a1/50c4f2840f6790b2959f6ee34e8942
+  error [nextflow.exception.ProcessFailedException]: Process `NFCORE_SMRNASEQ:SMRNASEQ:CONTAMINANT_FILTER:MAP_RRNA (1)` terminated with an error exit status (255)
+Nov-01 13:22:51.079 [Task monitor] ERROR nextflow.processor.TaskProcessor - Error executing process > 'NFCORE_SMRNASEQ:SMRNASEQ:CONTAMINANT_FILTER:MAP_RRNA (1)'
+
+Caused by:
+  Process `NFCORE_SMRNASEQ:SMRNASEQ:CONTAMINANT_FILTER:MAP_RRNA (1)` terminated with an error exit status (255)
+
+Command executed:
+
+  INDEX=`find -L ./ -name "*.3.ebwt" | sed 's/.3.ebwt//'`
+  bowtie2 \
+      --threads 6 \
+      --very-sensitive-local \
+      -k 1 \
+      -x $INDEX \
+      --un CD_SPZ_REP2.rRNA.filter.unmapped.contaminant.fastq \
+      CD_SPZ_REP2.fastp.fastq.gz \
+      [] \
+      -S CD_SPZ_REP2.filter.contaminant.sam > CD_SPZ_REP2.contaminant_bowtie.log 2>&1
+  
+  # extracting number of reads from bowtie logs
+  awk -v type=rRNA 'BEGIN{tot=0} {if(NR==4 || NR == 5){tot += $1}} END {print "\""type"\": "tot }' CD_SPZ_REP2.contaminant_bowtie.log | tr -d , > filtered.CD_SPZ_REP2_rRNA.stats
+  
+  cat <<-END_VERSIONS > versions.yml
+  "NFCORE_SMRNASEQ:SMRNASEQ:CONTAMINANT_FILTER:MAP_RRNA":
+      bowtie2: $(echo $(bowtie2 --version 2>&1) | sed 's/^.*bowtie2-align-s version //; s/ .*$//' | tr -d ' ')
+  END_VERSIONS
+
+Command exit status:
+  255
+
+Command output:
+  (empty)
+
+Work dir:
+  /home/musaqa/mina/work/a1/50c4f2840f6790b2959f6ee34e8942
+
+Tip: when you have fixed the problem you can continue the execution adding the option `-resume` to the run command line
+Nov-01 13:22:51.129 [Task monitor] INFO  nextflow.Session - Execution cancelled -- Finishing pending tasks before exit
+Nov-01 13:22:51.138 [main] DEBUG nextflow.Session - Session await > all processes finished
+Nov-01 13:22:52.852 [Actor Thread 1165] DEBUG nextflow.sort.BigSort - Sort completed -- entries: 13; slices: 1; internal sort time: 0.041 s; external sort time: 0.005 s; total time: 0.046 s
+Nov-01 13:22:52.853 [Actor Thread 1165] DEBUG nextflow.file.FileCollector - >> temp file exists? false
+Nov-01 13:22:52.858 [Actor Thread 1165] DEBUG nextflow.file.FileCollector - Missed collect-file cache -- cause: java.nio.file.NoSuchFileException: /home/musaqa/mina/work/collect-file/f15b451d84a81ce9a0b38f5a18ea1e51
+Nov-01 13:22:53.446 [Actor Thread 1165] DEBUG nextflow.file.FileCollector - Saved collect-files list to: /home/musaqa/mina/work/collect-file/f15b451d84a81ce9a0b38f5a18ea1e51
+Nov-01 13:22:53.449 [Actor Thread 1165] DEBUG nextflow.file.FileCollector - Deleting file collector temp dir: /tmp/nxf-8433627238452400486
+Nov-01 13:24:00.175 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 1 -- submitted tasks are shown below
+~> TaskHandler[id: 37; name: NFCORE_SMRNASEQ:SMRNASEQ:FASTQC_FASTP:FASTQC_TRIM (CD_SPZ_REP2); status: RUNNING; exit: -; error: -; workDir: /home/musaqa/mina/work/2f/3080ea0936930f443ae5e6ec4e4bb3]
+Nov-01 13:24:04.079 [Task submitter] DEBUG n.processor.TaskPollingMonitor - %% executor local > tasks in the submission queue: 35 -- tasks to be submitted are shown below
+~> TaskHandler[id: 38; name: NFCORE_SMRNASEQ:SMRNASEQ:MIRDEEP2:MIRDEEP2_PIGZ (CD_SPZ_REP1); status: NEW; exit: -; error: -; workDir: /home/musaqa/mina/work/a5/bafe1a5e0ec5284ddff9f0e2082236]
+~> TaskHandler[id: 40; name: NFCORE_SMRNASEQ:SMRNASEQ:CONTAMINANT_FILTER:MAP_RRNA (2); status: NEW; exit: -; error: -; workDir: /home/musaqa/mina/work/f3/e8d11b63c1a7982a9766776a6a4e72]
+~> TaskHandler[id: 39; name: NFCORE_SMRNASEQ:SMRNASEQ:FASTQC_FASTP:FASTQC_TRIM (CD_SPZ_REP1); status: NEW; exit: -; error: -; workDir: /home/musaqa/mina/work/e1/712ac239cf2096c3740aa4a77279ea]
+~> TaskHandler[id: 41; name: NFCORE_SMRNASEQ:SMRNASEQ:CONTAMINANT_FILTER:MAP_RRNA (3); status: NEW; exit: -; error: -; workDir: /home/musaqa/mina/work/85/e4133e87208f3b8f2250478a748af4]
+~> TaskHandler[id: 43; name: NFCORE_SMRNASEQ:SMRNASEQ:MIRDEEP2:MIRDEEP2_PIGZ (CD_SPZ_REP3); status: NEW; exit: -; error: -; workDir: /home/musaqa/mina/work/e4/eed1264f76a71049bc941b8795d7f3]
+~> TaskHandler[id: 42; name: NFCORE_SMRNASEQ:SMRNASEQ:FASTQC_FASTP:FASTQC_TRIM (CD_SPZ_REP3); status: NEW; exit: -; error: -; workDir: /home/musaqa/mina/work/ab/8ce5a5c095772162d7a58f34b0f74a]
+~> TaskHandler[id: 44; name: NFCORE_SMRNASEQ:SMRNASEQ:FASTQC_FASTP:FASTQC_TRIM (CD_ZAJ_REP1); status: NEW; exit: -; error: -; workDir: /home/musaqa/mina/work/5b/ba74aaf0f29b0f2b081ecf15033f2a]
+~> TaskHandler[id: 45; name: NFCORE_SMRNASEQ:SMRNASEQ:MIRDEEP2:MIRDEEP2_PIGZ (CD_ZAJ_REP1); status: NEW; exit: -; error: -; workDir: /home/musaqa/mina/work/43/6a539c40d9d7e50ac66d6e8d557041]
+~> TaskHandler[id: 46; name: NFCORE_SMRNASEQ:SMRNASEQ:CONTAMINANT_FILTER:MAP_RRNA (4); status: NEW; exit: -; error: -; workDir: /home/musaqa/mina/work/23/1f4a6a8b3e2145061a845a5fbac8fe]
+~> TaskHandler[id: 49; name: NFCORE_SMRNASEQ:SMRNASEQ:MIRDEEP2:MIRDEEP2_PIGZ (CD_ZAJ_REP2); status: NEW; exit: -; error: -; workDir: /home/musaqa/mina/work/03/da33ae9dfe138335854575d06f7335]
+.. remaining tasks omitted.
+Nov-01 13:24:24.051 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 37; name: NFCORE_SMRNASEQ:SMRNASEQ:FASTQC_FASTP:FASTQC_TRIM (CD_SPZ_REP2); status: COMPLETED; exit: 0; error: -; workDir: /home/musaqa/mina/work/2f/3080ea0936930f443ae5e6ec4e4bb3]
+Nov-01 13:24:24.071 [Task monitor] DEBUG n.processor.TaskPollingMonitor - <<< barrier arrives (monitor: local) - terminating tasks monitor poll loop
+Nov-01 13:24:24.071 [main] DEBUG nextflow.Session - Session await > all barriers passed
+Nov-01 13:24:24.105 [main] DEBUG nextflow.util.ThreadPoolManager - Thread pool 'PublishDir' shutdown completed (hard=false)
+Nov-01 13:24:24.120 [main] INFO  nextflow.Nextflow - -[0;35m[nf-core/smrnaseq][0;31m Pipeline completed with errors[0m-
+Nov-01 13:24:24.161 [main] DEBUG n.trace.WorkflowStatsObserver - Workflow completed > WorkflowStats[succeededCount=36; failedCount=1; ignoredCount=0; cachedCount=0; pendingCount=35; submittedCount=0; runningCount=0; retriesCount=0; abortedCount=0; succeedDuration=2h 22m 17s; failedDuration=31.1s; cachedDuration=0ms;loadCpus=0; loadMemory=0; peakRunning=1; peakCpus=6; peakMemory=10 GB; ]
+Nov-01 13:24:24.162 [main] DEBUG nextflow.trace.TraceFileObserver - Workflow completed -- saving trace file
+Nov-01 13:24:24.172 [main] DEBUG nextflow.trace.ReportObserver - Workflow completed -- rendering execution report
+Nov-01 13:24:25.903 [main] DEBUG nextflow.trace.TimelineObserver - Workflow completed -- rendering execution timeline
+Nov-01 13:24:26.168 [main] DEBUG nextflow.cache.CacheDB - Closing CacheDB done
+Nov-01 13:24:26.169 [main] INFO  org.pf4j.AbstractPluginManager - Stop plugin 'nf-validation@1.1.1'
+Nov-01 13:24:26.169 [main] DEBUG nextflow.plugin.BasePlugin - Plugin stopped nf-validation
+Nov-01 13:24:26.210 [main] DEBUG nextflow.util.ThreadPoolManager - Thread pool 'FileTransfer' shutdown completed (hard=false)
+Nov-01 13:24:26.212 [main] DEBUG nextflow.script.ScriptRunner - > Execution complete -- Goodbye
