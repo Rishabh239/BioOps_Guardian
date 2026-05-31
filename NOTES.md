@@ -1,9 +1,4 @@
-# scRNA-seq Extension — Contribution Notes
-
-**Contributor:** Mansi Chandra  
-**Date:** May 2026  
-**Branch:** feature/scrna-seq-patterns
-
+# scRNA-seq Extension - Contribution Notes
 ---
 
 ## Overview
@@ -81,3 +76,8 @@ python -m unittest tests/test_scrna_patterns.py -v
 # Full test suite
 python -m unittest discover -s tests -v
 ```
+
+Contributor: Mansi Chandra  
+Date: May 2026  
+Branch: feature/scrna-seq-patterns
+
