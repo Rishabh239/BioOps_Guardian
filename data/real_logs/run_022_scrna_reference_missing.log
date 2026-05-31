@@ -1,0 +1,13 @@
+N E X T F L O W  ~  version 23.10.1
+Launching `nf-core/scrnaseq` [hungry_turing] DSL2 - revision: gc5a6445
+
+executor >  google-batch
+[cd/5678ef] NFCORE_SCRNASEQ:SCRNASEQ:CELLRANGER_COUNT [FAILED]
+
+Error executing process > 'NFCORE_SCRNASEQ:SCRNASEQ:CELLRANGER_COUNT'
+
+Your reference does not contain the expected files
+--protocol 10XV3 --aligner cellranger
+--fasta gs://path/to/bucket/cellranger/refdata-gex-GRCh38-2024-A/fasta/genome.fa
+--gtf gs://path/to/bucket/cellranger/refdata-gex-GRCh38-2024-A/genes/genes.gtf
+Work dir: gs://path/to/bucket/scrnaseq/work

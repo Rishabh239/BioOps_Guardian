@@ -1,0 +1,20 @@
+N E X T F L O W  ~  version 23.10.1
+Launching `nf-core/scrnaseq` [crazy_tesla] DSL2 - revision: gc5a6445
+
+executor >  local
+[ab/1234cd] NFCORE_SCRNASEQ:SCRNASEQ:MTX_TO_H5AD (176354) [FAILED]
+
+Error executing process > 'NFCORE_SCRNASEQ:SCRNASEQ:MTX_TO_H5AD (176354)'
+
+Caused by:
+  Essential container in task exited
+
+Traceback (most recent call last):
+  File "/.nextflow/assets/nf-core/scrnaseq/modules/local/mtx_to_h5ad.py"
+    adata = _mtx_to_adata(input_data, sample)
+  File "/opt/conda/lib/python3.12/site-packages/scanpy/readwrite.py", line 304
+    obs_dict = {"obs_names": dsets["barcodes"].astype(str)}
+AttributeError: 'Empty' object has no attribute 'astype'. Did you mean: 'dtype'?
+
+barcodes.tsv.gz and matrix.mtx.gz files for the failed samples are empty
+Work dir: /home/user/work/ab/1234cd

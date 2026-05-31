@@ -3,6 +3,8 @@ log_parser.py - Parse Nextflow log files and detect error patterns.
 """
 import re
 from src.patterns import ERROR_PATTERNS
+from src.scrna_patterns import SCRNA_PATTERNS
+ALL_PATTERNS = ERROR_PATTERNS + SCRNA_PATTERNS
 
 
 def parse_nextflow_log(text: str) -> dict:
@@ -44,7 +46,7 @@ def parse_nextflow_log(text: str) -> dict:
 
     # Match error patterns
     lines = text.split("\n")
-    for pattern in ERROR_PATTERNS:
+    for pattern in ALL_PATTERNS:
         matched_regexes = [p for p in pattern["patterns"] if p.search(text)]
         if not matched_regexes:
             continue

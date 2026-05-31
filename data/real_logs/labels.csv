@@ -17,3 +17,8 @@ run_015_pipeline_clean.log,clean,custom/main,local
 run_016_empty_clean.log,clean,custom/main,local
 run_017_calcpav_failed_process.log,failed_process,custom/main,local
 run_018_dge_invalid_parameter.log,invalid_parameter,DGE,local
+run_019_scrna_empty_barcodes.log,failed_process,nf-core/scrnaseq,local
+run_020_scrna_concat_h5ad.log,failed_process,nf-core/scrnaseq,conda
+run_021_scrna_disk_space.log,disk_space,nf-core/scrnaseq,google-batch
+run_022_scrna_reference_missing.log,missing_file,nf-core/scrnaseq,google-batch
+run_023_scrna_chemistry_ignored.log,invalid_parameter,nf-core/scrnaseq,local

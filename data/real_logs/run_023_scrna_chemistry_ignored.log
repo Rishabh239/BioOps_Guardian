@@ -1,0 +1,13 @@
+N E X T F L O W  ~  version 23.10.1
+Launching `nf-core/scrnaseq` [sad_lovelace] DSL2 - revision: gc5a6445
+
+executor >  local
+[ef/9012gh] NFCORE_SCRNASEQ:SCRNASEQ:CELLRANGER_MULTI [FAILED]
+
+Error executing process > 'NFCORE_SCRNASEQ:SCRNASEQ:CELLRANGER_MULTI'
+
+protocol parameter was silently ignored
+chemistry option was never populated in the GEX meta
+cellranger multi always fell back to auto-detection regardless of user input
+invalid chemistry: auto-detection failed for this library type
+Work dir: /home/user/work/ef/9012gh
