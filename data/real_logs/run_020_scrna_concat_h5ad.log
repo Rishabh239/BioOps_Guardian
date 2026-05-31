@@ -1,0 +1,13 @@
+N E X T F L O W  ~  version 23.10.1
+Launching `nf-core/scrnaseq` [jolly_curie] DSL2 - revision: gc5a6445
+
+executor >  local (conda)
+[cd/5678ef] NFCORE_SCRNASEQ:SCRNASEQ:MTX_CONVERSION:CONCAT_H5AD (1) [FAILED]
+
+Caused by:
+  Process NFCORE_SCRNASEQ:SCRNASEQ:MTX_CONVERSION:CONCAT_H5AD (1) terminated
+  with an error exit status (1)
+
+anndata version incompatible — file was written by a newer version of AnnData
+AttributeError: AnnData object has no attribute 'obs_names'
+Work dir: /home/user/work/cd/5678ef

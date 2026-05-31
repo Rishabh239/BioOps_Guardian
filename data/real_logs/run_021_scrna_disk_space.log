@@ -1,0 +1,11 @@
+N E X T F L O W  ~  version 23.10.1
+Launching `nf-core/scrnaseq` [jovial_curie] DSL2 - revision: gc5a6445
+
+executor >  google-batch
+[ab/1234cd] NFCORE_SCRNASEQ:SCRNASEQ:CELLRANGER_COUNT [FAILED]
+
+Error executing process > 'NFCORE_SCRNASEQ:SCRNASEQ:CELLRANGER_COUNT'
+
+/opt/cellranger-8.0.0/bin/tenkit/sitecheck: line 25: echo: write error: No space left on device
+The job resources need to be modified to provide more disk space
+Work dir: gs://arc-genomics-nextflow/scrnaseq/work
