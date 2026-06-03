@@ -15,8 +15,11 @@ import streamlit as st
 from src.log_parser import parse_nextflow_log
 from src.sample_validator import validate_sample_sheet
 from src.patterns import ERROR_PATTERNS
+from src.scrna_patterns import SCRNA_PATTERNS
 from src.ml_classifier import MLClassifier
 from src.preflight import run_preflight
+
+ALL_PATTERNS = ERROR_PATTERNS + SCRNA_PATTERNS
 
 DEMO_LOG = PROJECT_ROOT / "data" / "demo_assets" / "example.log"
 DEMO_SHEET = PROJECT_ROOT / "data" / "demo_assets" / "example_samplesheet.csv"
@@ -32,7 +35,7 @@ def load_model():
     return None
 
 
-PATTERN_LOOKUP = {p["id"]: p for p in ERROR_PATTERNS}
+PATTERN_LOOKUP = {p["id"]: p for p in ALL_PATTERNS}
 
 st.set_page_config(
     page_title="BioOps Guardian",
@@ -750,7 +753,21 @@ with tab_ref:
     st.markdown(section_header("📖", "Error Pattern Reference"), unsafe_allow_html=True)
     st.caption("All error categories the ML model detects, with regex patterns for log line matching.")
 
+    st.markdown(f"**Bulk RNA-seq Patterns** ({len(ERROR_PATTERNS)})")
     for pat in ERROR_PATTERNS:
+        sev = pat["severity"]
+        with st.expander(f"{pat['icon']}  {pat['label']}  —  {badge(sev, sev)}", expanded=False):
+            st.markdown(f"""<div class="card card-info">
+                <p style="margin:0 0 6px 0;color:#374151"><strong>Cause:</strong> {pat['cause']}</p>
+                <p style="margin:0;color:#374151"><strong>Fix:</strong> {pat['fix']}</p>
+            </div>""", unsafe_allow_html=True)
+            st.code(pat["command"], language="bash")
+            st.markdown(f"**Regex patterns** ({len(pat['patterns'])}):")
+            for p in pat["patterns"]:
+                st.code(p.pattern, language=None)
+
+    st.markdown(f"**scRNA-seq Patterns** ({len(SCRNA_PATTERNS)})")
+    for pat in SCRNA_PATTERNS:
         sev = pat["severity"]
         with st.expander(f"{pat['icon']}  {pat['label']}  —  {badge(sev, sev)}", expanded=False):
             st.markdown(f"""<div class="card card-info">

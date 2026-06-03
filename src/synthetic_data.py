@@ -36,6 +36,7 @@ PIPELINES = [
     ("nf-core/differentialabundance", ["1.2.0", "1.4.0"]),
     ("nf-core/methylseq", ["2.4.0", "2.6.0"]),
     ("nf-core/smrnaseq", ["2.1.0", "2.3.0"]),
+    ("nf-core/scrnaseq", ["2.5.0", "2.6.0", "2.7.0"]),
 ]
 
 EXECUTORS = ["local", "slurm", "sge", "pbs", "lsf", "awsbatch", "google-lifesciences", "k8s"]
@@ -70,6 +71,15 @@ PROCESSES_BY_PIPELINE = {
         "NFCORE_SAREK:SAREK:APPLYBQSR",
         "NFCORE_SAREK:SAREK:GATK4_HAPLOTYPECALLER",
         "NFCORE_SAREK:SAREK:MULTIQC",
+    ],
+    "nf-core/scrnaseq": [
+        "NFCORE_SCRNASEQ:SCRNASEQ:INPUT_CHECK:SAMPLESHEET_CHECK",
+        "NFCORE_SCRNASEQ:SCRNASEQ:FASTQC",
+        "NFCORE_SCRNASEQ:SCRNASEQ:STARSOLO",
+        "NFCORE_SCRNASEQ:SCRNASEQ:GENE_MAP",
+        "NFCORE_SCRNASEQ:SCRNASEQ:MTX_TO_H5AD",
+        "NFCORE_SCRNASEQ:SCRNASEQ:CONCAT_H5AD",
+        "NFCORE_SCRNASEQ:SCRNASEQ:MULTIQC",
     ],
 }
 
@@ -413,6 +423,124 @@ def _build_error_block(rng, category, pipeline_name, user, genome):
         exit_status = rng.choice(["1", "28"])
         context_lines = [f"Command exit status: {exit_status}"]
 
+    # ── scRNA-seq error categories ────────────────────────────────
+    elif category == "starsolo_memory":
+        req_gb = rng.choice([32, 36, 48, 64])
+        avail_gb = round(rng.uniform(8, req_gb * 0.5), 1)
+        error_templates = [
+            [f"STARsolo process killed with exit code 137",
+             f"  Cannot allocate {req_gb}G for genome + whitelist loading"],
+            [f"STAR genomeLoad failed -- cannot allocate memory",
+             f"  solo out of memory: requested {req_gb}GB, available {avail_gb}GB"],
+            [f"STAR process killed by signal 9 (SIGKILL)",
+             f"  Genome load failed: insufficient memory for STARsolo"],
+        ]
+        error_lines = rng.choice(error_templates)
+        exit_status = "137"
+        context_lines = [f"Command exit status: {exit_status}"]
+
+    elif category == "barcode_whitelist_missing":
+        whitelist_paths = [
+            "/data/whitelists/3M-february-2018.txt",
+            "/ref/10x/737K-august-2016.txt",
+            f"{work_dir}/whitelist.txt",
+            "/opt/cellranger/lib/python/cellranger/barcodes/3M-february-2018.txt",
+        ]
+        wl_path = rng.choice(whitelist_paths)
+        error_templates = [
+            [f"EXITING: soloCBwhitelist file not found: {wl_path}"],
+            [f"Whitelist file does not exist: {wl_path}",
+             f"  --soloCBwhitelist error: cannot open file"],
+            [f"Barcode whitelist missing: {wl_path}",
+             f"  CB whitelist cannot open '{wl_path}'"],
+        ]
+        error_lines = rng.choice(error_templates)
+        exit_status = "1"
+        context_lines = [f"Command exit status: {exit_status}"]
+
+    elif category == "wrong_chemistry":
+        wrong = rng.choice(["10xv2", "10xv3", "10xv3_5prime"])
+        error_templates = [
+            [f"Chemistry '{wrong}' not recognized for this library"],
+            [f"Invalid chemistry specification: {wrong}",
+             f"  soloType invalid for the given barcode length"],
+            [f"Unknown chemistry version: {wrong}",
+             f"  --chemistry error: does not match detected barcode structure"],
+        ]
+        error_lines = rng.choice(error_templates)
+        exit_status = "1"
+        context_lines = [f"Command exit status: {exit_status}"]
+
+    elif category == "empty_cell_output":
+        error_templates = [
+            [f"WARNING: no cells detected in filtered output",
+             f"  0 cells passed filtering threshold"],
+            [f"Empty barcode matrix: 0 cells found",
+             f"  Cell number: 0 -- check chemistry and whitelist"],
+            [f"Filtered matrix empty after cell calling",
+             f"  0 cells detected -- possible chemistry mismatch"],
+        ]
+        error_lines = rng.choice(error_templates)
+        exit_status = "0"
+        context_lines = [f"Command exit status: {exit_status}"]
+
+    elif category == "cellranger_fastq_naming":
+        bad_name = rng.choice(["sample_1.fastq.gz", "reads_R1.fq.gz", "SRR1234_1.fastq.gz"])
+        error_templates = [
+            [f"cellranger: invalid FASTQ file name: {bad_name}",
+             f"  Expected format: SampleName_S1_L001_R1_001.fastq.gz"],
+            [f"FASTQ naming convention error for cellranger",
+             f"  Could not detect FASTQ files matching cellranger pattern"],
+            [f"No input FASTQs found for cellranger",
+             f"  _R1_001.fastq.gz not found in input directory"],
+        ]
+        error_lines = rng.choice(error_templates)
+        exit_status = "1"
+        context_lines = [f"Command exit status: {exit_status}"]
+
+    elif category == "kallisto_empty_bus":
+        error_templates = [
+            [f"BUS file is empty: 0 records processed",
+             f"  kallisto pseudoalignment: 0 reads mapped"],
+            [f"kb run failed: empty output",
+             f"  bustools: empty BUS file, no reads pseudoaligned"],
+            [f"No reads pseudoaligned to transcriptome",
+             f"  kallisto 0 records -- check genome index and chemistry"],
+        ]
+        error_lines = rng.choice(error_templates)
+        exit_status = "1"
+        context_lines = [f"Command exit status: {exit_status}"]
+
+    elif category == "anndata_version_mismatch":
+        old_ver = rng.choice(["0.7.6", "0.8.0", "0.9.1"])
+        new_ver = rng.choice(["0.10.0", "0.10.3", "0.11.0"])
+        error_templates = [
+            [f"anndata version {old_ver} incompatible with file written by {new_ver}",
+             f"  h5ad cannot be read by current AnnData installation"],
+            [f"AnnData unsupported format: file requires anndata>={new_ver}",
+             f"  Installed: {old_ver}"],
+            [f"anndata AttributeError: module has no attribute 'read_h5ad'",
+             f"  backed h5ad error: version mismatch ({old_ver} vs {new_ver})"],
+        ]
+        error_lines = rng.choice(error_templates)
+        exit_status = "1"
+        context_lines = [f"Command exit status: {exit_status}"]
+
+    elif category == "scrna_genome_mismatch":
+        assemblies = [("GRCh38", "GRCh37"), ("GRCm39", "GRCm38"), ("hg38", "hg19")]
+        fasta_asm, gtf_asm = rng.choice(assemblies)
+        error_templates = [
+            [f"Chromosome names in GTF ({gtf_asm}) not found in FASTA ({fasta_asm})",
+             f"  GTF chromosome names do not match genome FASTA"],
+            [f"Contig 'chr1' from GTF not in genome FASTA",
+             f"  Genome annotation incompatible: {fasta_asm} FASTA vs {gtf_asm} GTF"],
+            [f"seqname 'chr1' not found in FASTA reference",
+             f"  Genome/GTF mismatch: ensure both are from the same assembly"],
+        ]
+        error_lines = rng.choice(error_templates)
+        exit_status = "1"
+        context_lines = [f"Command exit status: {exit_status}"]
+
     # Build the full error block
     block = [
         f"Error executing process > '{failed_proc} ({sample})'",
@@ -517,7 +645,7 @@ def generate_single_log(category, seed=None):
 
 
 def generate_dataset(n_per_category=200, include_clean=True, seed=42):
-    """Generate a full labeled dataset across all 8 error categories (+ optional clean)."""
+    """Generate a full labeled dataset across all error categories (+ optional clean)."""
     categories = [
         "memory_exceeded",
         "missing_file",
@@ -527,6 +655,14 @@ def generate_dataset(n_per_category=200, include_clean=True, seed=42):
         "failed_process",
         "invalid_parameter",
         "disk_space",
+        "starsolo_memory",
+        "barcode_whitelist_missing",
+        "wrong_chemistry",
+        "empty_cell_output",
+        "cellranger_fastq_naming",
+        "kallisto_empty_bus",
+        "anndata_version_mismatch",
+        "scrna_genome_mismatch",
     ]
     if include_clean:
         categories.append("clean")

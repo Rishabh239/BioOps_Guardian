@@ -13,6 +13,9 @@ Usage:
 
 import re
 from src.patterns import ERROR_PATTERNS
+from src.scrna_patterns import SCRNA_PATTERNS
+
+ALL_PATTERNS = ERROR_PATTERNS + SCRNA_PATTERNS
 
 
 def extract_features(text: str) -> dict:
@@ -83,7 +86,7 @@ def extract_features(text: str) -> dict:
     features["exit_is_139"] = int(ec == 139)  # segfault
 
     # ── Regex pattern match counts ───────────────────────────────
-    for pattern in ERROR_PATTERNS:
+    for pattern in ALL_PATTERNS:
         pid = pattern["id"]
         match_count = sum(1 for p in pattern["patterns"] if p.search(text))
         features[f"regex_{pid}"] = match_count
@@ -102,5 +105,5 @@ def get_feature_names() -> list:
         "has_pipeline_failed", "has_conda_error",
         "exit_is_137", "exit_is_1", "exit_is_127", "exit_is_126", "exit_is_139",
     ]
-    regex_features = [f"regex_{p['id']}" for p in ERROR_PATTERNS]
+    regex_features = [f"regex_{p['id']}" for p in ALL_PATTERNS]
     return base + regex_features
